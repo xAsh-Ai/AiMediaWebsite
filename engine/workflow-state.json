@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "content_job": {
+    "field": "status",
+    "initial_state": "queued",
+    "terminal_states": ["archived"],
+    "states": [
+      {
+        "id": "queued",
+        "description": "Accepted normalized source item waiting for generation.",
+        "owner": "automation"
+      },
+      {
+        "id": "processing",
+        "description": "Draft generation and preflight rule execution are running.",
+        "owner": "automation"
+      },
+      {
+        "id": "needs_review",
+        "description": "The draft exists and must be reviewed by an editor.",
+        "owner": "editor"
+      },
+      {
+        "id": "approved",
+        "description": "The job output is approved for publishing and channel packaging.",
+        "owner": "editor"
+      },
+      {
+        "id": "rejected",
+        "description": "The candidate should not continue because it is weak, duplicate, or low-impact.",
+        "owner": "editor"
+      },
+      {
+        "id": "archived",
+        "description": "The job is retained for audit but is no longer active.",
+        "owner": "editor_or_automation"
+      }
+    ],
+    "transitions": [
+      { "from": "queued", "to": "processing", "trigger": "generation_started" },
+      { "from": "processing", "to": "needs_review", "trigger": "draft_created" },
+      { "from": "needs_review", "to": "approved", "trigger": "all_blocking_rules_pass" },
+      { "from": "needs_review", "to": "rejected", "trigger": "editor_rejects_candidate" },
+      { "from": "approved", "to": "archived", "trigger": "workflow_closed" },
+      { "from": "rejected", "to": "archived", "trigger": "workflow_closed" }
+    ]
+  },
+  "article": {
+    "field": "review_status",
+    "initial_state": "draft",
+    "terminal_states": ["archived"],
+    "states": [
+      {
+        "id": "draft",
+        "description": "The first content body exists but has not entered review.",
+        "owner": "automation"
+      },
+      {
+        "id": "needs_review",
+        "description": "Manual review is required before scheduling or publish.",
+        "owner": "editor"
+      },
+      {
+        "id": "approved",
+        "description": "The article is ready for scheduling or direct publish.",
+        "owner": "editor"
+      },
+      {
+        "id": "scheduled",
+        "description": "The article has a publish slot or batch assignment.",
+        "owner": "editor"
+      },
+      {
+        "id": "published",
+        "description": "The article is live on the web surface.",
+        "owner": "automation_or_editor"
+      },
+      {
+        "id": "rejected",
+        "description": "The article draft should not ship.",
+        "owner": "editor"
+      },
+      {
+        "id": "archived",
+        "description": "The article stays available for audit and duplicate detection but is no longer active.",
+        "owner": "editor_or_automation"
+      }
+    ],
+    "transitions": [
+      { "from": "draft", "to": "needs_review", "trigger": "draft_ready_for_editor" },
+      { "from": "needs_review", "to": "approved", "trigger": "editor_approves" },
+      { "from": "needs_review", "to": "rejected", "trigger": "editor_rejects" },
+      { "from": "approved", "to": "scheduled", "trigger": "publish_window_assigned" },
+      { "from": "approved", "to": "published", "trigger": "publish_now" },
+      { "from": "scheduled", "to": "published", "trigger": "scheduled_publish_runs" },
+      { "from": "published", "to": "archived", "trigger": "retire_article" },
+      { "from": "rejected", "to": "archived", "trigger": "retain_for_audit" }
+    ]
+  },
+  "review_log": {
+    "result_values": ["pass", "fail", "warn", "skip"],
+    "required_base_fields": ["id", "rule_key", "result", "message", "created_at"],
+    "record_ref_fields": ["article_id", "content_job_id"],
+    "record_ref_requirement": "exactly_one"
+  },
+  "channel_package": {
+    "types": ["web_publish", "newsletter_batch", "future_dispatch"],
+    "prerequisite_article_states": ["approved", "scheduled", "published"]
+  }
+}
