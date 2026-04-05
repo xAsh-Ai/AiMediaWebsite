@@ -6,21 +6,21 @@
     <title>Tool Archives | AiMediaWebsite</title>
     <meta
       name="description"
-      content="AiMediaWebsite 툴 아카이브 예정 페이지. Issue #3에서 OpenAI, Anthropic, Cursor, Vercel, Supabase 허브를 구현한다."
+      content="AiMediaWebsite 툴 desk 아카이브. OpenAI, Anthropic, Cursor, Vercel, Supabase 다섯 벤더 기준으로 seed brief와 다음 큐를 탐색한다."
     />
     <script>
       document.documentElement.classList.add("js-ready");
     </script>
     <link rel="stylesheet" href="../assets/css/main.css" />
   </head>
-  <body class="placeholder-page" data-page="tools">
+  <body class="archive-page" data-page="tools">
     <div class="site-shell">
       <header class="topbar">
-        <a class="brand" href="../index.html">
+        <a class="brand" href="../index.html" aria-label="AiMediaWebsite 홈">
           <span class="brand-mark">AM</span>
           <span class="brand-copy">
             <strong>AiMediaWebsite</strong>
-            <span>Editorial placeholder</span>
+            <span>Tool archive desks</span>
           </span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
@@ -30,35 +30,142 @@
           <a href="../index.html">Home</a>
           <a href="../briefs/index.html">Latest Briefs</a>
           <a href="../categories/index.html">Categories</a>
-          <a href="./index.html">Tool Archives</a>
+          <a href="./index.html" aria-current="page">Tool Archives</a>
           <a href="../weekly/index.html">Weekly Summary</a>
         </nav>
       </header>
 
-      <main class="placeholder-layout">
-        <section class="panel placeholder-copy reveal">
-          <p class="eyebrow">Issue #3 next</p>
-          <h1>툴 아카이브는 브랜드 소개가 아니라 변화 추적의 축이어야 합니다.</h1>
-          <p>
-            각 툴 페이지는 단순 회사 소개가 아니라, 업데이트 히스토리와 실무 영향 패턴을 모으는 허브로 설계됩니다.
-            MVP에서는 다섯 개 desk만 우선 연결합니다.
-          </p>
-          <div class="placeholder-links">
-            <a class="button button-primary" href="../index.html">홈으로 돌아가기</a>
-            <a class="button button-secondary" href="https://github.com/xAsh-Ai/AiMediaWebsite/issues/3">Issue #3 보기</a>
+      <main>
+        <section class="archive-hero panel reveal">
+          <div class="archive-hero-copy">
+            <p class="eyebrow">Issue #3</p>
+            <h1>툴 desk는 브랜드 소개가 아니라 변화 패턴을 쌓는 아카이브여야 한다</h1>
+            <p class="archive-summary">
+              OpenAI, Anthropic, Cursor, Vercel, Supabase 다섯 desk를 먼저 엽니다. 각 desk는 공식 채널, 관련 카테고리,
+              current seed, 다음 큐를 묶는 탐색 축입니다.
+            </p>
+            <div class="jump-links">
+              <a class="button button-primary" href="#openai">OpenAI</a>
+              <a class="button button-secondary" href="#anthropic">Anthropic</a>
+              <a class="button button-secondary" href="#cursor">Cursor</a>
+              <a class="button button-secondary" href="#vercel">Vercel</a>
+              <a class="button button-secondary" href="#supabase">Supabase</a>
+            </div>
           </div>
+
+          <aside class="archive-hero-side">
+            <p class="eyebrow">Desk rule</p>
+            <ul class="compact-list">
+              <li>Desk는 공식 채널과 실무 패턴을 함께 적립합니다.</li>
+              <li>아직 글 수가 적으므로 회사 소개보다 seed와 queue를 먼저 노출합니다.</li>
+              <li>카테고리와 desk는 서로 왕복 가능한 링크 구조를 유지합니다.</li>
+            </ul>
+          </aside>
         </section>
 
-        <aside class="panel placeholder-card reveal">
-          <h2>Initial tracked tools</h2>
-          <ul>
-            <li id="openai">OpenAI</li>
-            <li id="anthropic">Anthropic</li>
-            <li id="cursor">Cursor</li>
-            <li id="vercel">Vercel</li>
-            <li id="supabase">Supabase</li>
-          </ul>
-        </aside>
+        <section class="archive-section-grid">
+          <article class="archive-section panel reveal" id="openai">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Desk 01</p>
+                <h2>OpenAI</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-breaking">Breaking</span>
+                <span class="priority-pill priority-pill-light priority-security">Security</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              모델 lifecycle, API changelog, release notes, deprecations가 모두 여기로 모입니다. 현재 두 seed 모두 OpenAI 공식 근거를 포함합니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../briefs/ops-governance-brief.html">Seed 01: deprecations operations brief</a>
+              <a class="archive-link" href="../briefs/eng-runbook-brief.html">Seed 02: endpoint / rollout engineering brief</a>
+              <a class="archive-link" href="../categories/index.html#models">Category: Model / API changes</a>
+            </div>
+          </article>
+
+          <article class="archive-section panel reveal" id="anthropic">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Desk 02</p>
+                <h2>Anthropic</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-security">Security</span>
+                <span class="priority-pill priority-pill-light priority-education">Education</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              아직 seed는 없지만, policy, model updates, enterprise workflow changes가 OpenAI와 비교될 수 있는 다음 축입니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../categories/index.html#models">Category: Model / API changes</a>
+              <a class="archive-link" href="../categories/index.html#agents">Category: Automation / agent features</a>
+            </div>
+          </article>
+
+          <article class="archive-section panel reveal" id="cursor">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Desk 03</p>
+                <h2>Cursor</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-security">Security</span>
+                <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              인터뷰 기준으로 rules file, extension version, team rollout note가 한 세트로 움직이는 desk입니다. 다음 seed 후보가 여기에서 나옵니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../categories/index.html#coding-tools">Category: Coding tool updates</a>
+              <a class="archive-link" href="../categories/index.html#agents">Category: Automation / agent features</a>
+            </div>
+          </article>
+
+          <article class="archive-section panel reveal" id="vercel">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Desk 04</p>
+                <h2>Vercel</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+                <span class="priority-pill priority-pill-light priority-cost">Cost</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              region, runtime, build, edge, quota처럼 deploy와 billing이 겹치는 변화를 추적합니다. Seed 02에서 OpenAI API 변화와 같이 읽히는 desk입니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../briefs/eng-runbook-brief.html">Seed 02: rollout / fallback sequence</a>
+              <a class="archive-link" href="../categories/index.html#infra">Category: Deploy / infrastructure changes</a>
+              <a class="archive-link" href="../categories/index.html#pricing">Category: Pricing / plan changes</a>
+            </div>
+          </article>
+
+          <article class="archive-section panel reveal" id="supabase">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Desk 05</p>
+                <h2>Supabase</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+                <span class="priority-pill priority-pill-light priority-nonbreaking">Non-breaking</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              database, edge functions, auth, pricing and branch workflow changes를 장기적으로 담을 desk입니다. 현재는 infra / pricing 카테고리의 follow-up 대상으로 둡니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../categories/index.html#infra">Category: Deploy / infrastructure changes</a>
+              <a class="archive-link" href="../categories/index.html#pricing">Category: Pricing / plan changes</a>
+            </div>
+          </article>
+        </section>
       </main>
     </div>
 

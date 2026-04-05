@@ -1300,6 +1300,105 @@ main {
   gap: 1rem;
 }
 
+.archive-page {
+  background:
+    radial-gradient(circle at top left, rgba(92, 183, 176, 0.26), transparent 22rem),
+    radial-gradient(circle at top right, rgba(143, 181, 255, 0.16), transparent 22rem),
+    linear-gradient(180deg, #f6efdf 0%, #ede1cc 100%);
+}
+
+.archive-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 1rem;
+  padding: 1.4rem;
+}
+
+.archive-hero-copy,
+.archive-hero-side {
+  position: relative;
+}
+
+.archive-summary {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.archive-hero-side {
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(16, 50, 74, 0.1);
+}
+
+.jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.archive-section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.archive-section {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.2rem;
+  scroll-margin-top: 6.5rem;
+}
+
+.archive-section-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.9rem;
+}
+
+.archive-section h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.archive-copy {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.archive-links {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.archive-link {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(16, 50, 74, 0.1);
+  background: rgba(255, 255, 255, 0.52);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.archive-link:hover,
+.archive-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(16, 50, 74, 0.22);
+  background: rgba(255, 255, 255, 0.74);
+}
+
 .weekly-columns {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1398,6 +1497,8 @@ main {
   .hub-hero,
   .template-grid,
   .anatomy-grid,
+  .archive-hero,
+  .archive-section-grid,
   .article-hero,
   .article-layout,
   .hero,
@@ -1461,6 +1562,7 @@ main {
 
   .hero,
   .hub-hero,
+  .archive-hero,
   .article-hero,
   .article-main,
   .aside-card,
