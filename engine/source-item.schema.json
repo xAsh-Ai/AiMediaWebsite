@@ -40,8 +40,7 @@
       "format": "date-time"
     },
     "raw_text": {
-      "type": ["string", "null"],
-      "minLength": 1
+      "type": ["string", "null"]
     },
     "raw_fetched_at": {
       "type": "string",
@@ -53,7 +52,7 @@
     },
     "normalized": {
       "description": "Optional normalize-layer payload. This is absent until normalization succeeds.",
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": false,
       "required": [
         "event_key",
@@ -198,7 +197,13 @@
         "required": ["fetch_status"]
       },
       "then": {
-        "required": ["raw_text"]
+        "required": ["raw_text"],
+        "properties": {
+          "raw_text": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
       }
     }
   ]

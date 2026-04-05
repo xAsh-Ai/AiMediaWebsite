@@ -48,8 +48,8 @@
       "is_official": true,
       "fetch_cadence": "manual",
       "parser_key": "help-center-release-notes",
-      "status": "active",
-      "notes": "Workspace and app-facing changes that may matter to operations teams. Keep manual until the ingestion layer can handle Help Center access controls."
+      "status": "draft",
+      "notes": "Workspace and app-facing changes that may matter to operations teams. Keep manual and draft until the ingestion layer can handle Help Center access controls."
     },
     {
       "id": "anthropic-release-notes-overview",

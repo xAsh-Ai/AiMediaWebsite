@@ -111,7 +111,7 @@ The initial registry covers the first tracked vendor set from the product brief:
 
 | Vendor | Included sources | Why they are in v0 |
 | --- | --- | --- |
-| OpenAI | API changelog, API deprecations, ChatGPT release notes | highest editorial priority and already used in seed briefs; ChatGPT release notes stay manual until access constraints are solved |
+| OpenAI | API changelog, API deprecations, ChatGPT release notes | highest editorial priority and already used in seed briefs; ChatGPT release notes stay `manual` and `draft` until access constraints are solved |
 | Anthropic | release notes overview, Claude Help Center release notes, model deprecations | strong comparator vendor for API and workspace changes |
 | Cursor | changelog | primary coding-tool desk and interview-backed follow-up seed |
 | Vercel | changelog | deploy, runtime, and pricing changes often overlap with API work |
