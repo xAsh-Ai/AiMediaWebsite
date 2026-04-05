@@ -15,6 +15,42 @@ python3 -m http.server 8000
 
 브라우저에서 `http://localhost:8000`을 연다.
 
+## Vercel Preview Deploy
+
+현재 퍼블릭 MVP는 정적 HTML 사이트로 운영되므로, preview 배포는 Vercel 기준으로 가장 단순하게 처리한다.
+
+```bash
+cd /Users/mac/project/AiMediaWebsite
+vercel deploy -y
+```
+
+배포 전제:
+- `vercel whoami` 가 성공해야 한다.
+- 배포 설정은 루트의 [`vercel.json`](/tmp/aimedia-deploy/vercel.json) 을 기준으로 한다.
+- preview 배포를 기본값으로 두고, production 배포는 별도 판단 후 진행한다.
+
+## Public QA Smoke Pass
+
+퍼블릭 QA는 preview URL을 직접 두드리는 방식보다, 로컬에서 Vercel 라우팅을 재현한 뒤 핵심 경로를 점검하는 흐름을 기본으로 둔다.
+
+```bash
+cd /Users/mac/project/AiMediaWebsite
+vercel dev --listen 127.0.0.1:4173
+```
+
+확인할 핵심 경로:
+- `/`
+- `/briefs`
+- `/categories`
+- `/tools`
+- `/weekly`
+- `/weekly/checklist`
+- `/newsletter`
+- `/about`
+- `/contact`
+
+세부 체크리스트는 [`docs/public-qa-smoke-pass.md`](/tmp/aimedia-deploy/docs/public-qa-smoke-pass.md) 를 따른다.
+
 ## Documents
 
 | 문서 | 경로 | 역할 |
