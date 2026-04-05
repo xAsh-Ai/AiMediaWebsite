@@ -3,6 +3,7 @@
 ## Project
 
 - Workspace path: `/Users/mac/project/AiMediaWebsite`
+- GitHub: https://github.com/xAsh-Ai/AiMediaWebsite
 - Product brief: `/Users/mac/project/AiMediaWebsite/AiMediaWebsite.md`
 - GStack design doc (office-hours): `/Users/mac/.gstack/projects/aimediawebsite/mac-unknown-design-20260405-112043.md`
 
