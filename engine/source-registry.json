@@ -38,20 +38,6 @@
       "notes": "Lifecycle and retirement notices with replacement guidance."
     },
     {
-      "id": "openai-chatgpt-release-notes",
-      "domain_id": "ai-saas",
-      "vendor_code": "openai",
-      "vendor_name": "OpenAI",
-      "name": "ChatGPT release notes",
-      "source_type": "release_notes",
-      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
-      "is_official": true,
-      "fetch_cadence": "manual",
-      "parser_key": "help-center-release-notes",
-      "status": "draft",
-      "notes": "Workspace and app-facing changes that may matter to operations teams. Keep manual and draft until the ingestion layer can handle Help Center access controls."
-    },
-    {
       "id": "anthropic-release-notes-overview",
       "domain_id": "ai-saas",
       "vendor_code": "anthropic",

@@ -15,7 +15,7 @@
 - Community links can be a discovery signal, but not the final truth.
 - The registry should prefer reusable parser families over vendor-specific fetch code.
 - New vendors should be addable by config when they fit an existing parser family.
-- Some official sources stay in the registry even when they are `manual` intake because the authority exists but is not bot-friendly.
+- Some official sources are documented first and only added to machine-readable config once ingestion is realistic.
 
 ## Source types
 
@@ -29,7 +29,7 @@
 | `github_issue` | official GitHub issue or discussion used as a rollout notice | yes | `official_github` |
 | `email` | account-scoped vendor email notice | no, manual intake only | `official_account_email` |
 
-`email` is part of the model because the manual workflow already treats official email as a valid authority. The first registry file mainly contains pollable web sources, but it may also include manual-only official pages when the source is important and browser-gated.
+`email` is part of the model because the manual workflow already treats official email as a valid authority. The first registry file keeps ingest-ready web sources, while manual-only authorities stay documented here until ingestion is realistic.
 
 ## `sources` config contract
 
@@ -111,7 +111,7 @@ The initial registry covers the first tracked vendor set from the product brief:
 
 | Vendor | Included sources | Why they are in v0 |
 | --- | --- | --- |
-| OpenAI | API changelog, API deprecations, ChatGPT release notes | highest editorial priority and already used in seed briefs; ChatGPT release notes stay `manual` and `draft` until access constraints are solved |
+| OpenAI | API changelog, API deprecations, ChatGPT release notes | highest editorial priority and already used in seed briefs; ChatGPT release notes stay documented as a deferred manual authority until access constraints are solved |
 | Anthropic | release notes overview, Claude Help Center release notes, model deprecations | strong comparator vendor for API and workspace changes |
 | Cursor | changelog | primary coding-tool desk and interview-backed follow-up seed |
 | Vercel | changelog | deploy, runtime, and pricing changes often overlap with API work |
@@ -141,6 +141,15 @@ The handoff rule is simple:
 - if a new source shape does not fit an existing parser family, add one parser in code and then reference it from config
 
 That keeps vendor expansion mostly data-driven while still allowing parser code to stay generic and reusable.
+
+## Deferred manual authorities
+
+These sources matter editorially, but are not yet part of the machine-readable registry because they are browser-gated or account-scoped:
+
+| Vendor | Source | Why deferred |
+| --- | --- | --- |
+| OpenAI | ChatGPT release notes | official help-center page is useful for workspace changes, but it is not yet reliable as an ingestion target |
+| Any vendor | official account email | authoritative for account-scoped changes, but capture is manual by nature |
 
 ## Files added in this slice
 
