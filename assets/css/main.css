@@ -1335,6 +1335,20 @@ main {
   font-size: 0.92rem;
 }
 
+.weekly-page {
+  background:
+    radial-gradient(circle at top left, rgba(92, 183, 176, 0.18), transparent 22rem),
+    radial-gradient(circle at top right, rgba(239, 108, 77, 0.14), transparent 20rem),
+    linear-gradient(180deg, #f5eddd 0%, #ece0cb 100%);
+}
+
+.checklist-page {
+  background:
+    radial-gradient(circle at top left, rgba(143, 181, 255, 0.16), transparent 22rem),
+    radial-gradient(circle at top right, rgba(255, 213, 177, 0.14), transparent 18rem),
+    linear-gradient(180deg, #f6efe1 0%, #ebdfcf 100%);
+}
+
 .placeholder-page {
   background:
     radial-gradient(circle at top left, rgba(239, 108, 77, 0.14), transparent 22rem),

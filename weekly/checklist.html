@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical Checklist | AiMediaWebsite</title>
+    <meta
+      name="description"
+      content="AiMediaWebsite practical checklist. 이번 주 브리프에서 실제로 끝내야 하는 운영형/엔지니어링형 액션을 역할별로 정리한 실행 페이지."
+    />
+    <script>
+      document.documentElement.classList.add("js-ready");
+    </script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="weekly-page checklist-page" data-page="weekly">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="../index.html" aria-label="AiMediaWebsite 홈">
+          <span class="brand-mark">AM</span>
+          <span class="brand-copy">
+            <strong>AiMediaWebsite</strong>
+            <span>Practical checklist</span>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" data-site-nav>
+          <a href="../briefs/index.html">Latest Briefs</a>
+          <a href="../categories/index.html">Categories</a>
+          <a href="../tools/index.html">Tool Archives</a>
+          <a href="./index.html" aria-current="page">Weekly Summary</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="article-hero panel reveal">
+          <div class="article-hero-main">
+            <div class="article-kicker-row">
+              <span class="brief-track-badge brief-track-shared">Shared core</span>
+              <span class="priority-pill priority-pill-light priority-breaking">Breaking</span>
+              <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+              <span class="priority-pill priority-pill-light priority-education">Education</span>
+            </div>
+
+            <p class="eyebrow">Practical checklist / this week</p>
+            <h1>이번 주 실무 체크리스트는 역할과 공유 형식까지 같이 적어야 실행된다</h1>
+            <p class="article-standfirst">
+              이 페이지는 현재 weekly desk에 들어간 두 seed brief를 실제 운영 항목으로 재가공한 실행 목록입니다. 공지,
+              위키, staging smoke, runbook update처럼 각자 다른 팀이 처리해야 하는 항목을 한 화면에서 나눕니다.
+            </p>
+          </div>
+
+          <aside class="article-hero-side">
+            <p class="eyebrow">One-line conclusion</p>
+            <p class="article-conclusion">
+              owner와 share format이 없는 체크리스트는 실행되지 않습니다. 그래서 각 항목은 누가 보고, 어디에 공유하고, 무엇으로 닫는지까지 같이 적습니다.
+            </p>
+          </aside>
+        </section>
+
+        <div class="article-layout">
+          <article class="article-main panel reveal">
+            <section class="article-section">
+              <p class="section-label">Shared core</p>
+              <h2>두 seed에 공통으로 걸리는 금주 실행 항목</h2>
+              <div class="share-grid">
+                <article class="share-block share-block-checklist">
+                  <div class="share-block-head">
+                    <span class="share-label">Evidence lock</span>
+                    <span class="share-track share-track-shared">Shared</span>
+                  </div>
+                  <ul class="article-list">
+                    <li>공식 source 링크를 각 브리프와 weekly desk에서 다시 확인</li>
+                    <li>first seen via / who confirms / who shares / who acts 값이 비어 있지 않은지 점검</li>
+                    <li>priority tag가 실제 액션과 맞는지 검토</li>
+                  </ul>
+                </article>
+
+                <article class="share-block share-block-checklist">
+                  <div class="share-block-head">
+                    <span class="share-label">Share lock</span>
+                    <span class="share-track share-track-shared">Shared</span>
+                  </div>
+                  <ul class="article-list">
+                    <li>운영형은 leader 5-line 또는 wiki summary 중 하나를 금주 안에 배포</li>
+                    <li>엔지니어링형은 Slack-ready note와 runbook memo를 같은 thread로 공유</li>
+                    <li>weekly desk 링크를 공유 텍스트와 함께 전달</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Operations lane</p>
+              <h2>운영형 항목은 영향 팀과 교육 반영 순서를 먼저 고정한다</h2>
+              <div class="info-grid">
+                <article class="info-card">
+                  <strong>Team leads</strong>
+                  <span>리더용 5줄 요약을 받아 이번 주 영향도와 마감일을 확인합니다.</span>
+                </article>
+                <article class="info-card">
+                  <strong>Enablement</strong>
+                  <span>교육 자료와 실습 템플릿에서 구형 모델명을 제거합니다.</span>
+                </article>
+                <article class="info-card">
+                  <strong>Governance</strong>
+                  <span>대체 모델, 허용 범위, 계정 운영 가이드를 위키에 반영합니다.</span>
+                </article>
+              </div>
+              <ol class="article-list ordered">
+                <li>영향 워크스페이스와 팀 목록을 최신화한다.</li>
+                <li>leader 5-line을 리더 채널에 배포한다.</li>
+                <li>wiki summary에 만료일, 대체 경로, 교육 반영 상태를 기록한다.</li>
+                <li>교육 담당자에게 수정 요청과 마감일을 함께 전달한다.</li>
+              </ol>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Engineering lane</p>
+              <h2>엔지니어링형 항목은 staging과 fallback이 확인돼야 닫힌다</h2>
+              <div class="info-grid">
+                <article class="info-card">
+                  <strong>Backend</strong>
+                  <span>요청 경로, response parser, SDK 버전을 점검합니다.</span>
+                </article>
+                <article class="info-card">
+                  <strong>Platform</strong>
+                  <span>배포 순서와 env diff, rollback trigger를 정리합니다.</span>
+                </article>
+                <article class="info-card">
+                  <strong>On-call</strong>
+                  <span>fallback 경로와 handoff memo를 런북에 반영합니다.</span>
+                </article>
+              </div>
+              <ol class="article-list ordered">
+                <li>staging smoke에서 요청 경로와 응답 차이를 재확인한다.</li>
+                <li>fallback 모델 또는 엔드포인트를 runbook memo에 기록한다.</li>
+                <li>배포 전 Slack-ready note로 scope와 timing을 공유한다.</li>
+                <li>온콜 handoff에 rollback 조건을 포함해 남긴다.</li>
+              </ol>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Editorial lane</p>
+              <h2>편집 데스크는 weekly desk를 닫는 역할을 맡는다</h2>
+              <div class="faq-stack">
+                <article class="faq-card">
+                  <h3>1. seed를 다시 고른다</h3>
+                  <p>category/tool 허브에서 다음 주간 후보를 고르되, breaking 여부보다 공유 재작성 비용과 영향 범위를 먼저 봅니다.</p>
+                </article>
+                <article class="faq-card">
+                  <h3>2. 보류 항목을 명시한다</h3>
+                  <p>이번 주 대응이 필요 없는 항목도 weekly summary에 같이 적어 팀의 불필요한 긴장을 줄입니다.</p>
+                </article>
+                <article class="faq-card">
+                  <h3>3. publish loop를 닫는다</h3>
+                  <p>source, confirm, share, act 네 단계 중 어디까지 끝났는지 다음 weekly summary에서 다시 확인합니다.</p>
+                </article>
+              </div>
+            </section>
+          </article>
+
+          <aside class="article-aside">
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Jump links</p>
+              <ul class="source-list">
+                <li><a href="./index.html">weekly summary desk</a></li>
+                <li><a href="../briefs/ops-governance-brief.html">operations seed brief</a></li>
+                <li><a href="../briefs/eng-runbook-brief.html">engineering seed brief</a></li>
+              </ul>
+            </section>
+
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Preferred outputs</p>
+              <div class="share-stack">
+                <article class="share-block share-block-leader">
+                  <div class="share-block-head">
+                    <span class="share-label">Leader 5-line</span>
+                    <span class="share-track share-track-ops">Ops default</span>
+                  </div>
+                  <p>리더 채널에는 영향 팀, 마감일, 필요한 결정만 5줄로 정리합니다.</p>
+                </article>
+
+                <article class="share-block share-block-slack">
+                  <div class="share-block-head">
+                    <span class="share-label">Slack-ready note</span>
+                    <span class="share-track share-track-eng">Eng default</span>
+                  </div>
+                  <p>팀 채널에는 scope, staging 상태, rollout timing, fallback 위치만 남깁니다.</p>
+                </article>
+
+                <article class="share-block share-block-runbook">
+                  <div class="share-block-head">
+                    <span class="share-label">Runbook memo</span>
+                    <span class="share-track share-track-eng">Eng default</span>
+                  </div>
+                  <p>fallback 경로, rollback trigger, on-call handoff 세 줄은 별도 메모로 분리합니다.</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Desk reminder</p>
+              <dl class="evidence-list">
+                <div>
+                  <dt>Source</dt>
+                  <dd>official changelog / deprecations / vendor docs only</dd>
+                </div>
+                <div>
+                  <dt>Confirm</dt>
+                  <dd>운영 담당 또는 backend/platform owner가 확인 후 공유</dd>
+                </div>
+                <div>
+                  <dt>Act</dt>
+                  <dd>위키, 교육, staging, runbook 중 무엇이 실제로 바뀌었는지 남기기</dd>
+                </div>
+              </dl>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
