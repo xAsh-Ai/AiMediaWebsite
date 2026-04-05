@@ -61,6 +61,7 @@ Every published brief must capture these fields explicitly:
 - The homepage or briefs hub is updated if this is part of the current seed set.
 
 ## Current seed set
+
 | Seed | Track | Page | Official authority | First seen via | Preferred share |
 |------|------|------|------|------|------|
 | Seed 01 | Operations | [`briefs/ops-governance-brief.html`](../briefs/ops-governance-brief.html) | OpenAI deprecations + changelog | official email + docs | leader 5-line / wiki / checklist |

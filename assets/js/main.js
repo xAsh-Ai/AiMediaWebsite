@@ -1,13 +1,31 @@
 document.documentElement.classList.add("js-ready");
 
+const normalizePathname = (pathname) => {
+  if (!pathname || pathname === "/") {
+    return "/index.html";
+  }
+
+  if (pathname.endsWith("/")) {
+    return `${pathname}index.html`;
+  }
+
+  const lastSegment = pathname.split("/").pop();
+
+  if (lastSegment && !lastSegment.includes(".")) {
+    return `${pathname}/index.html`;
+  }
+
+  return pathname;
+};
+
 const navToggle = document.querySelector("[data-nav-toggle]");
 const siteNav = document.querySelector("[data-site-nav]");
-const currentPath = window.location.pathname.replace(/\/$/, "") || "/index.html";
+const currentPath = normalizePathname(window.location.pathname);
 
 document.querySelectorAll(".site-nav a").forEach((link) => {
-  const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/$/, "");
+  const linkPath = normalizePathname(new URL(link.href, window.location.origin).pathname);
 
-  if (linkPath === currentPath || (currentPath === "" && linkPath === "/index.html")) {
+  if (linkPath === currentPath) {
     link.setAttribute("aria-current", "page");
   }
 });
@@ -22,24 +40,33 @@ if (navToggle && siteNav) {
 }
 
 const revealItems = document.querySelectorAll(".reveal");
+const showRevealItems = () => revealItems.forEach((item) => item.classList.add("is-visible"));
+const canUseRevealObserver =
+  revealItems.length > 0 &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+  "IntersectionObserver" in window;
 
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && revealItems.length > 0) {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.15,
-      rootMargin: "0px 0px -10% 0px",
-    },
-  );
+if (canUseRevealObserver) {
+  try {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -10% 0px",
+      },
+    );
 
-  revealItems.forEach((item) => revealObserver.observe(item));
+    revealItems.forEach((item) => revealObserver.observe(item));
+  } catch (error) {
+    showRevealItems();
+  }
 } else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
+  showRevealItems();
 }

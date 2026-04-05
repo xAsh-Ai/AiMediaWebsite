@@ -8,6 +8,9 @@
       name="description"
       content="AiMediaWebsite 툴 아카이브 예정 페이지. Issue #3에서 OpenAI, Anthropic, Cursor, Vercel, Supabase 허브를 구현한다."
     />
+    <script>
+      document.documentElement.classList.add("js-ready");
+    </script>
     <link rel="stylesheet" href="../assets/css/main.css" />
   </head>
   <body class="placeholder-page" data-page="tools">
@@ -20,7 +23,10 @@
             <span>Editorial placeholder</span>
           </span>
         </a>
-        <nav class="site-nav is-open">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+        <nav class="site-nav" id="site-nav" data-site-nav>
           <a href="../index.html">Home</a>
           <a href="../briefs/index.html">Latest Briefs</a>
           <a href="../categories/index.html">Categories</a>
