@@ -18,12 +18,12 @@
 ## Social Metadata
 
 - 모든 퍼블릭 페이지는 title, description, canonical, OG, Twitter card를 가진다.
-- 홈과 일반 안내 페이지는 `assets/brand/og-default.svg` 를 사용한다.
-- 브리프 템플릿 성격의 페이지는 `assets/brand/og-brief.svg` 를 사용한다.
-- 현재는 정적 SVG share card를 쓰고, 추후 커스텀 도메인 또는 실사용 공유 로그가 쌓이면 PNG 카드로 확장할 수 있다.
+- 홈과 일반 안내 페이지는 `assets/brand/og-default.png` 를 사용한다.
+- 브리프 템플릿 성격의 페이지는 `assets/brand/og-brief.png` 를 사용한다.
+- 공유 미리보기 호환성을 위해 OG/Twitter 메타데이터에는 정적 PNG share card를 기본으로 사용한다. SVG 원본은 디자인 소스로만 유지한다.
 
 ## Icon Assets
 
 - 루트에 `favicon.svg`, `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` 를 둔다.
-- HTML head에서는 icon, shortcut icon, apple touch icon, manifest를 모두 루트 기준으로 연결한다.
+- HTML head에서는 icon, apple touch icon, manifest를 모두 루트 기준으로 연결한다.
 - 이 구성이 들어가면 브라우저 기본 `/favicon.ico` 요청도 404 없이 처리된다.
