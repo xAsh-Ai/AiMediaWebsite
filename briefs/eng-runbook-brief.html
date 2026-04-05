@@ -38,9 +38,9 @@
           <div class="article-hero-main">
             <div class="article-kicker-row">
               <span class="brief-track-badge brief-track-eng">Engineering track</span>
-              <span class="priority-pill priority-pill-light">Deployment</span>
-              <span class="priority-pill priority-pill-light">Cost</span>
-              <span class="priority-pill priority-pill-light">Non-breaking</span>
+              <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+              <span class="priority-pill priority-pill-light priority-cost">Cost</span>
+              <span class="priority-pill priority-pill-light priority-nonbreaking">Non-breaking</span>
             </div>
 
             <p class="eyebrow">Sample brief / OpenAI + Vercel desk</p>
@@ -164,16 +164,22 @@
             <section class="aside-card panel reveal">
               <p class="eyebrow">Share blocks</p>
               <div class="share-stack">
-                <article class="share-block">
-                  <span class="share-label">Slack-ready note</span>
+                <article class="share-block share-block-slack">
+                  <div class="share-block-head">
+                    <span class="share-label">Slack-ready note</span>
+                    <span class="share-track share-track-eng">Eng default</span>
+                  </div>
                   <p>
                     금주 API 권장 경로 변경 확인. staging smoke와 fallback 점검 후 내일 배포 예정. 런북 경로와 rollback 조건은
                     thread에 정리하겠습니다.
                   </p>
                 </article>
 
-                <article class="share-block">
-                  <span class="share-label">Runbook memo</span>
+                <article class="share-block share-block-runbook">
+                  <div class="share-block-head">
+                    <span class="share-label">Runbook memo</span>
+                    <span class="share-track share-track-eng">Eng default</span>
+                  </div>
                   <ul class="article-list">
                     <li>fallback 모델 / 엔드포인트 경로</li>
                     <li>response parser diff 확인</li>
@@ -182,8 +188,11 @@
                   </ul>
                 </article>
 
-                <article class="share-block">
-                  <span class="share-label">This-week checklist</span>
+                <article class="share-block share-block-checklist">
+                  <div class="share-block-head">
+                    <span class="share-label">This-week checklist</span>
+                    <span class="share-track share-track-shared">Shared core</span>
+                  </div>
                   <ul class="article-list">
                     <li>SDK version audit</li>
                     <li>staging smoke test</li>

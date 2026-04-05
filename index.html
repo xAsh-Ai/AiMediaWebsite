@@ -135,6 +135,11 @@
               <span class="tag tag-sample">Sample brief</span>
               <span>OpenAI desk</span>
             </div>
+            <div class="brief-card-flags">
+              <span class="brief-track-badge brief-track-eng">Engineering track</span>
+              <span class="priority-pill priority-pill-light priority-breaking">Breaking</span>
+              <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+            </div>
             <h3>API 응답 형식 변경이 있으면 어느 팀이 먼저 점검해야 하나</h3>
             <p class="card-kicker">Backend owners / agent builders / QA</p>
             <ul class="signal-list">
@@ -149,6 +154,11 @@
               <span class="tag tag-sample">Sample brief</span>
               <span>Cursor desk</span>
             </div>
+            <div class="brief-card-flags">
+              <span class="brief-track-badge brief-track-shared">Ops + Eng</span>
+              <span class="priority-pill priority-pill-light priority-security">Security</span>
+              <span class="priority-pill priority-pill-light priority-education">Education</span>
+            </div>
             <h3>코딩 도구 업데이트를 팀 정책 관점으로 재해석하는 카드</h3>
             <p class="card-kicker">Engineering leads / enablement</p>
             <ul class="signal-list">
@@ -162,6 +172,11 @@
             <div class="card-meta">
               <span class="tag tag-sample">Sample brief</span>
               <span>Vercel desk</span>
+            </div>
+            <div class="brief-card-flags">
+              <span class="brief-track-badge brief-track-eng">Engineering track</span>
+              <span class="priority-pill priority-pill-light priority-cost">Cost</span>
+              <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
             </div>
             <h3>배포·인프라 변화는 운영 체크리스트로 끝나야 한다</h3>
             <p class="card-kicker">Platform / DevOps / growth engineers</p>
@@ -222,35 +237,55 @@
               인터뷰에서 반복된 요구는 동일했습니다. changelog 자체보다, 팀 채널에 다시 붙일 수 있는 형태가 더 필요했습니다.
             </p>
 
-            <div class="output-tags">
-              <span class="priority-pill">Breaking</span>
-              <span class="priority-pill">Non-breaking</span>
-              <span class="priority-pill">Cost</span>
-              <span class="priority-pill">Security</span>
-              <span class="priority-pill">Education</span>
-              <span class="priority-pill">Deployment</span>
+            <div class="priority-cluster output-tags">
+              <span class="priority-pill priority-breaking">Breaking</span>
+              <span class="priority-pill priority-nonbreaking">Non-breaking</span>
+              <span class="priority-pill priority-cost">Cost</span>
+              <span class="priority-pill priority-security">Security</span>
+              <span class="priority-pill priority-education">Education</span>
+              <span class="priority-pill priority-deployment">Deployment</span>
             </div>
 
-            <div class="output-grid">
-              <article class="output-card">
-                <strong>Leader 5-line</strong>
-                <span>의사결정자용 요약</span>
+            <p class="output-rule">
+              다섯 가지 출력을 모든 브리프에 강제하지 않습니다. 운영형은 Leader / Wiki / Checklist, 엔지니어링형은
+              Slack / Runbook / Checklist를 기본값으로 둡니다.
+            </p>
+
+            <div class="share-grid">
+              <article class="share-block share-block-leader">
+                <div class="share-block-head">
+                  <span class="share-label">Leader 5-line</span>
+                  <span class="share-track share-track-ops">Ops default</span>
+                </div>
+                <p>의사결정자에게 보내는 결론, 일정, 요청 5줄.</p>
               </article>
-              <article class="output-card">
-                <strong>This-week checklist</strong>
-                <span>이번 주 해야 할 일</span>
+              <article class="share-block share-block-checklist">
+                <div class="share-block-head">
+                  <span class="share-label">This-week checklist</span>
+                  <span class="share-track share-track-shared">Shared core</span>
+                </div>
+                <p>금주 반영 항목과 담당 팀을 바로 나눌 수 있는 실행 목록.</p>
               </article>
-              <article class="output-card">
-                <strong>Slack-ready note</strong>
-                <span>팀 채널 공지 초안</span>
+              <article class="share-block share-block-slack">
+                <div class="share-block-head">
+                  <span class="share-label">Slack-ready note</span>
+                  <span class="share-track share-track-eng">Eng default</span>
+                </div>
+                <p>팀 채널에 바로 붙이는 배포/점검 공지 초안.</p>
               </article>
-              <article class="output-card">
-                <strong>Wiki summary</strong>
-                <span>사내 문서 반영용 요약</span>
+              <article class="share-block share-block-wiki">
+                <div class="share-block-head">
+                  <span class="share-label">Wiki summary</span>
+                  <span class="share-track share-track-ops">Ops default</span>
+                </div>
+                <p>정책, 교육, 가이드 반영을 위한 사내 문서 요약.</p>
               </article>
-              <article class="output-card">
-                <strong>Runbook memo</strong>
-                <span>엔지니어링 운영 메모</span>
+              <article class="share-block share-block-runbook">
+                <div class="share-block-head">
+                  <span class="share-label">Runbook memo</span>
+                  <span class="share-track share-track-eng">Eng default</span>
+                </div>
+                <p>fallback, rollback, on-call handoff를 위한 운영 메모.</p>
               </article>
             </div>
 

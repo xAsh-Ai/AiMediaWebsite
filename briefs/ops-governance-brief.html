@@ -38,9 +38,9 @@
           <div class="article-hero-main">
             <div class="article-kicker-row">
               <span class="brief-track-badge brief-track-ops">Operations track</span>
-              <span class="priority-pill priority-pill-light">Security</span>
-              <span class="priority-pill priority-pill-light">Education</span>
-              <span class="priority-pill priority-pill-light">Breaking</span>
+              <span class="priority-pill priority-pill-light priority-security">Security</span>
+              <span class="priority-pill priority-pill-light priority-education">Education</span>
+              <span class="priority-pill priority-pill-light priority-breaking">Breaking</span>
             </div>
 
             <p class="eyebrow">Sample brief / OpenAI desk</p>
@@ -164,8 +164,11 @@
             <section class="aside-card panel reveal">
               <p class="eyebrow">Share blocks</p>
               <div class="share-stack">
-                <article class="share-block">
-                  <span class="share-label">Leader 5-line</span>
+                <article class="share-block share-block-leader">
+                  <div class="share-block-head">
+                    <span class="share-label">Leader 5-line</span>
+                    <span class="share-track share-track-ops">Ops default</span>
+                  </div>
                   <p>1. 특정 모델 단종 일정이 공식 공지로 확정됨.</p>
                   <p>2. 영향 대상은 템플릿 사용 팀과 교육 자료임.</p>
                   <p>3. 금주 내 대체 모델 공지와 위키 갱신이 필요.</p>
@@ -173,16 +176,22 @@
                   <p>5. 체크리스트 링크를 함께 배포할 것.</p>
                 </article>
 
-                <article class="share-block">
-                  <span class="share-label">Wiki-ready summary</span>
+                <article class="share-block share-block-wiki">
+                  <div class="share-block-head">
+                    <span class="share-label">Wiki-ready summary</span>
+                    <span class="share-track share-track-ops">Ops default</span>
+                  </div>
                   <p>
                     만료일, 대체 모델, 영향 팀, 교육 반영 여부, 계정 범위, 공지 완료 상태를 한 표로 정리해 위키에
                     저장합니다.
                   </p>
                 </article>
 
-                <article class="share-block">
-                  <span class="share-label">This-week checklist</span>
+                <article class="share-block share-block-checklist">
+                  <div class="share-block-head">
+                    <span class="share-label">This-week checklist</span>
+                    <span class="share-track share-track-shared">Shared core</span>
+                  </div>
                   <ul class="article-list">
                     <li>영향 워크스페이스 식별</li>
                     <li>리더용 5줄 공지 배포</li>
