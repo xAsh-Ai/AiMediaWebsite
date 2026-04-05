@@ -1434,6 +1434,44 @@ main {
   font-size: 0.92rem;
 }
 
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(16, 50, 74, 0.18);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  border-color: rgba(16, 50, 74, 0.42);
+}
+
+.public-page {
+  background:
+    radial-gradient(circle at top left, rgba(30, 88, 115, 0.12), transparent 24rem),
+    linear-gradient(180deg, #f6efdf 0%, #ecdfcd 100%);
+}
+
+.newsletter-page {
+  background:
+    radial-gradient(circle at top left, rgba(92, 183, 176, 0.16), transparent 22rem),
+    radial-gradient(circle at top right, rgba(239, 108, 77, 0.14), transparent 18rem),
+    linear-gradient(180deg, #f7f0e2 0%, #ecdfcd 100%);
+}
+
+.about-page {
+  background:
+    radial-gradient(circle at top left, rgba(143, 181, 255, 0.14), transparent 22rem),
+    radial-gradient(circle at top right, rgba(92, 183, 176, 0.12), transparent 18rem),
+    linear-gradient(180deg, #f5eedf 0%, #e9ddcb 100%);
+}
+
+.contact-page {
+  background:
+    radial-gradient(circle at top left, rgba(255, 213, 177, 0.16), transparent 22rem),
+    radial-gradient(circle at top right, rgba(239, 108, 77, 0.12), transparent 18rem),
+    linear-gradient(180deg, #f7efe2 0%, #eadbc7 100%);
+}
+
 .weekly-page {
   background:
     radial-gradient(circle at top left, rgba(92, 183, 176, 0.18), transparent 22rem),
@@ -1482,6 +1520,25 @@ main {
   margin-top: 1.1rem;
 }
 
+.public-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.public-card {
+  padding: 1.35rem;
+}
+
+.public-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.public-card p {
+  margin-bottom: 0.95rem;
+  color: var(--muted);
+}
+
 .placeholder-card ul {
   margin: 0;
   padding-left: 1rem;
@@ -1521,6 +1578,7 @@ main {
   .placeholder-layout,
   .cta-band,
   .brief-grid,
+  .public-grid,
   .weekly-columns,
   .hero-metrics {
     grid-template-columns: 1fr;
@@ -1589,6 +1647,7 @@ main {
   .weekly-strip,
   .cta-band,
   .brief-card,
+  .public-card,
   .placeholder-copy,
   .placeholder-card {
     padding: 1rem;

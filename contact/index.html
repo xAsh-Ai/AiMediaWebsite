@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | AiMediaWebsite</title>
+    <meta
+      name="description"
+      content="AiMediaWebsite contact. 정정 요청, 소스 제안, 협업 문의를 현재 어떤 채널로 받는지와 무엇을 보내야 하는지 정리한다."
+    />
+    <script>
+      document.documentElement.classList.add("js-ready");
+    </script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="public-page contact-page" data-page="contact">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="../index.html" aria-label="AiMediaWebsite 홈">
+          <span class="brand-mark">AM</span>
+          <span class="brand-copy">
+            <strong>AiMediaWebsite</strong>
+            <span>Corrections and source tips</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" data-site-nav>
+          <a href="../briefs/index.html">Latest Briefs</a>
+          <a href="../weekly/index.html">Weekly Summary</a>
+          <a href="../newsletter/index.html">Newsletter</a>
+          <a href="../about/index.html">About</a>
+          <a href="./index.html" aria-current="page">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hub-hero panel reveal">
+          <div class="hub-copy">
+            <p class="eyebrow">Contact / public MVP</p>
+            <h1>정정, 소스 제안, 협업 문의는 지금 단계에서는 GitHub를 공식 창구로 받습니다</h1>
+            <p class="hub-summary">
+              아직 전용 inbox를 열지 않았기 때문에, 현재는 GitHub issue가 가장 투명한 public contact channel입니다.
+              중요한 건 채널보다 패킷 품질입니다. 공식 링크와 영향 범위가 함께 와야 실제 큐로 들어갈 수 있습니다.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://github.com/xAsh-Ai/AiMediaWebsite/issues/new">GitHub issue 열기</a>
+              <a class="button button-secondary" href="https://github.com/xAsh-Ai/AiMediaWebsite">레포 보기</a>
+              <a class="button button-secondary" href="../about/index.html">편집 기준 보기</a>
+            </div>
+
+            <ul class="hero-metrics">
+              <li>
+                <span class="metric-label">Current channel</span>
+                <strong>GitHub Issues</strong>
+              </li>
+              <li>
+                <span class="metric-label">Accepted notes</span>
+                <strong>Corrections / tips / collaboration</strong>
+              </li>
+              <li>
+                <span class="metric-label">Response mode</span>
+                <strong>Manual review</strong>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="hub-board">
+            <div class="board-head">
+              <p class="eyebrow">Send the smallest useful packet</p>
+              <span class="board-badge">Contact rule</span>
+            </div>
+
+            <div class="board-stack">
+              <article class="board-card board-card-hot">
+                <div class="board-card-top">
+                  <span class="status-dot"></span>
+                  <span>Required</span>
+                </div>
+                <h2>공식 링크와 왜 중요한지, 누가 영향받는지까지 함께 보내야 큐에 들어갑니다</h2>
+                <p>“이거 봐주세요”보다 작은 실행 패킷이 더 유용합니다. source, impact, audience, action을 같이 보내는 편이 낫습니다.</p>
+              </article>
+
+              <article class="board-card">
+                <div class="board-row">
+                  <span>Correction</span>
+                  <strong>wrong fact or stale link</strong>
+                </div>
+                <div class="board-row">
+                  <span>Source tip</span>
+                  <strong>official update worth briefing</strong>
+                </div>
+                <div class="board-row">
+                  <span>Collaboration</span>
+                  <strong>distribution or ops workflow fit</strong>
+                </div>
+              </article>
+
+              <article class="board-card board-card-outline">
+                <p class="eyebrow">Current limitation</p>
+                <ul class="compact-list">
+                  <li>전용 이메일 inbox는 아직 열려 있지 않습니다.</li>
+                  <li>개인정보 수집형 폼도 아직 운영하지 않습니다.</li>
+                  <li>공개 트레일이 필요한 이유로 GitHub를 우선 사용합니다.</li>
+                </ul>
+              </article>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section-header reveal">
+          <div>
+            <p class="eyebrow">What to send</p>
+            <h2>문의 유형마다 필요한 정보가 다릅니다</h2>
+          </div>
+          <p>channel보다 중요 한 건 패킷의 선명도입니다. 아래 항목 정도만 있으면 수동 triage가 훨씬 빨라집니다.</p>
+        </section>
+
+        <section class="public-grid">
+          <article class="public-card panel reveal">
+            <p class="eyebrow">Lane 01</p>
+            <h3>Correction request</h3>
+            <p>사실 오류, 끊어진 링크, 잘못된 해석을 바로잡는 요청입니다.</p>
+            <ul class="article-list">
+              <li>문제가 있는 페이지 URL</li>
+              <li>정정이 필요한 문장 또는 블록</li>
+              <li>수정 근거가 되는 official source</li>
+            </ul>
+          </article>
+
+          <article class="public-card panel reveal">
+            <p class="eyebrow">Lane 02</p>
+            <h3>Source tip</h3>
+            <p>새 seed 후보가 될 만한 공식 업데이트를 제안하는 경우입니다.</p>
+            <ul class="article-list">
+              <li>official link</li>
+              <li>왜 실무 영향이 큰지</li>
+              <li>누가 가장 먼저 봐야 하는지</li>
+            </ul>
+          </article>
+
+          <article class="public-card panel reveal">
+            <p class="eyebrow">Lane 03</p>
+            <h3>Collaboration note</h3>
+            <p>이 포맷이 특정 팀이나 제품군에 더 맞는지, 어떤 distribution surface가 필요한지에 대한 제안입니다.</p>
+            <ul class="article-list">
+              <li>추적 중인 제품 또는 카테고리</li>
+              <li>현재 운영 워크플로우의 막힘</li>
+              <li>원하는 output format</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="split-layout">
+          <article class="lens-panel panel reveal">
+            <div class="section-header compact">
+              <div>
+                <p class="eyebrow">Current channels</p>
+                <h2>현재 열려 있는 public channel</h2>
+              </div>
+            </div>
+
+            <div class="desk-list">
+              <a class="desk-item" href="https://github.com/xAsh-Ai/AiMediaWebsite/issues/new">
+                <strong>Open an issue</strong>
+                <span>정정 요청, 소스 제안, beta dispatch 문의의 기본 창구</span>
+              </a>
+              <a class="desk-item" href="https://github.com/xAsh-Ai/AiMediaWebsite/issues">
+                <strong>Review existing issues</strong>
+                <span>이미 열려 있는 요청과 중복 여부를 먼저 확인</span>
+              </a>
+              <a class="desk-item" href="https://github.com/xAsh-Ai/AiMediaWebsite">
+                <strong>Repository</strong>
+                <span>현재 사이트 구조와 PR 흐름을 직접 확인할 수 있는 기준점</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="desk-panel panel reveal">
+            <div class="section-header compact">
+              <div>
+                <p class="eyebrow">What happens next</p>
+                <h2>보내주신 내용은 이런 순서로 처리됩니다</h2>
+              </div>
+            </div>
+
+            <div class="desk-list">
+              <article class="desk-item">
+                <strong>1. verify source</strong>
+                <span>official authority가 있는지 먼저 확인합니다.</span>
+              </article>
+              <article class="desk-item">
+                <strong>2. decide queue</strong>
+                <span>brief, weekly follow-up, or backlog인지 분류합니다.</span>
+              </article>
+              <article class="desk-item">
+                <strong>3. fold into output</strong>
+                <span>seed brief, weekly desk, checklist, newsletter pack 중 하나로 연결합니다.</span>
+              </article>
+            </div>
+          </article>
+        </section>
+
+        <section class="cta-band reveal">
+          <div>
+            <p class="eyebrow">Public feedback loop</p>
+            <h2>연락은 결국 다음 brief와 weekly queue를 더 정확하게 만드는 데 쓰입니다</h2>
+            <p>어떤 채널을 더 원하시는지보다 어떤 packet을 받고 싶은지가 더 중요합니다. ops용인지, eng용인지까지 함께 알려주세요.</p>
+          </div>
+          <div class="placeholder-links">
+            <a class="button button-primary" href="https://github.com/xAsh-Ai/AiMediaWebsite/issues/new">issue 열기</a>
+            <a class="button button-secondary" href="../newsletter/index.html">newsletter 보기</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>AiMediaWebsite public MVP.</p>
+        <p>
+          Explore:
+          <a href="../briefs/index.html">briefs</a>,
+          <a href="../weekly/index.html">weekly</a>,
+          <a href="../newsletter/index.html">newsletter</a>,
+          <a href="../about/index.html">about</a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
