@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | AiMediaWebsite</title>
+    <meta
+      name="description"
+      content="AiMediaWebsite 소개. 누구를 위한 사이트인지, 어떤 편집 기준으로 공식 업데이트를 실무 브리프로 바꾸는지 설명한다."
+    />
+    <script>
+      document.documentElement.classList.add("js-ready");
+    </script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="public-page about-page" data-page="about">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="../index.html" aria-label="AiMediaWebsite 홈">
+          <span class="brand-mark">AM</span>
+          <span class="brand-copy">
+            <strong>AiMediaWebsite</strong>
+            <span>Editorial policy</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" data-site-nav>
+          <a href="../briefs/index.html">Latest Briefs</a>
+          <a href="../weekly/index.html">Weekly Summary</a>
+          <a href="../newsletter/index.html">Newsletter</a>
+          <a href="./index.html" aria-current="page">About</a>
+          <a href="../contact/index.html">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="article-hero panel reveal">
+          <div class="article-hero-main">
+            <div class="article-kicker-row">
+              <span class="brief-track-badge brief-track-shared">Public MVP</span>
+              <span class="priority-pill priority-pill-light priority-security">Trust</span>
+              <span class="priority-pill priority-pill-light priority-deployment">Action</span>
+              <span class="priority-pill priority-pill-light priority-education">Clarity</span>
+            </div>
+
+            <p class="eyebrow">About / editorial desk</p>
+            <h1>AiMediaWebsite는 공식 업데이트를 실무 판단으로 바꾸는 편집 데스크입니다</h1>
+            <p class="article-standfirst">
+              목표는 기능 소개가 아닙니다. OpenAI, Anthropic, Cursor, Vercel, Supabase 같은 제품의 공식 업데이트를
+              읽고, 누가 영향받는지와 이번 주 어떤 액션이 필요한지를 빠르게 판단하게 돕는 것이 이 사이트의 역할입니다.
+            </p>
+          </div>
+
+          <aside class="article-hero-side">
+            <p class="eyebrow">One-line conclusion</p>
+            <p class="article-conclusion">
+              우리는 changelog를 번역하지 않고, 공식 근거 위에 실무 영향과 팀 공유용 출력물을 다시 씁니다.
+            </p>
+          </aside>
+        </section>
+
+        <div class="article-layout">
+          <article class="article-main panel reveal">
+            <section class="article-section">
+              <p class="section-label">Why this exists</p>
+              <h2>문제는 정보 부족이 아니라, 실무 판단용으로 다시 써야 하는 비용입니다</h2>
+              <p>
+                바쁜 팀은 업데이트를 몰라서 늦는 경우보다, changelog를 읽고 내부 공지 문장과 체크리스트로 다시 바꾸는 데
+                시간이 걸려서 늦는 경우가 더 많습니다. AiMediaWebsite는 그 재작성 비용을 줄이기 위해 설계됐습니다.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Who this is for</p>
+              <div class="info-grid">
+                <article class="info-card">
+                  <strong>Operations</strong>
+                  <span>정책, 교육, 계정 운영, 내부 공지와 위키 반영을 맡는 사람.</span>
+                </article>
+                <article class="info-card">
+                  <strong>Engineering</strong>
+                  <span>SDK, deploy, fallback, runbook, on-call 대응을 맡는 사람.</span>
+                </article>
+                <article class="info-card">
+                  <strong>Team leads</strong>
+                  <span>세부 문서보다 영향 범위와 다음 액션만 빠르게 읽고 싶은 사람.</span>
+                </article>
+              </div>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Editorial rules</p>
+              <ol class="article-list ordered">
+                <li>official-source-first: 공식 소스가 final authority입니다.</li>
+                <li>action-first: 누가 영향받고 무엇을 해야 하는지가 먼저입니다.</li>
+                <li>dual-track: 운영형과 엔지니어링형은 같은 문장을 강제로 공유하지 않습니다.</li>
+                <li>share-ready: 리더 요약, Slack 초안, runbook memo 같은 출력물을 남깁니다.</li>
+                <li>weekly closure: 브리프는 주간 요약과 practical checklist에서 다시 닫힙니다.</li>
+              </ol>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">What we do not publish</p>
+              <ul class="article-list">
+                <li>루머, 커뮤니티 추측, 비공식 스레드만으로 구성된 소식</li>
+                <li>실무 영향이 거의 없는 UI polish</li>
+                <li>마케팅성 발표를 그대로 옮긴 장문 요약</li>
+              </ul>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Current stage</p>
+              <p>
+                지금은 자동화 엔진보다 manual publishing standard를 먼저 검증하는 단계입니다. seed brief, weekly desk,
+                checklist, newsletter format을 먼저 고정한 다음에야 source collection, normalization, publishing
+                pipeline으로 넘어갑니다.
+              </p>
+            </section>
+          </article>
+
+          <aside class="article-aside">
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Current proof</p>
+              <ul class="source-list">
+                <li><a href="../briefs/index.html">dual-track briefs</a></li>
+                <li><a href="../weekly/index.html">weekly summary desk</a></li>
+                <li><a href="../weekly/checklist.html">practical checklist</a></li>
+              </ul>
+            </section>
+
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Operating principles</p>
+              <dl class="evidence-list">
+                <div>
+                  <dt>Authority</dt>
+                  <dd>official docs, changelog, release notes, official email</dd>
+                </div>
+                <div>
+                  <dt>Format</dt>
+                  <dd>brief, weekly summary, checklist, newsletter pack</dd>
+                </div>
+                <div>
+                  <dt>Goal</dt>
+                  <dd>reduce internal rewriting cost for product and infra updates</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Next surface</p>
+              <div class="share-stack">
+                <article class="share-block share-block-leader">
+                  <div class="share-block-head">
+                    <span class="share-label">Newsletter</span>
+                    <span class="share-track share-track-shared">Public</span>
+                  </div>
+                  <p>주간 운영 패킷으로 축약된 public retention surface.</p>
+                </article>
+                <article class="share-block share-block-checklist">
+                  <div class="share-block-head">
+                    <span class="share-label">Contact</span>
+                    <span class="share-track share-track-shared">Feedback</span>
+                  </div>
+                  <p>정정 요청, 소스 제안, 협업 문의를 받는 현재의 public feedback loop.</p>
+                </article>
+              </div>
+            </section>
+          </aside>
+        </div>
+
+        <section class="cta-band reveal">
+          <div>
+            <p class="eyebrow">Public loop</p>
+            <h2>이 사이트의 공개 면은 brief, weekly, newsletter, contact 네 층으로 닫힙니다</h2>
+            <p>지금은 퍼블릭 surface를 먼저 완성하고, 그 다음에 운영 엔진으로 들어가는 순서가 맞습니다.</p>
+          </div>
+          <div class="placeholder-links">
+            <a class="button button-primary" href="../newsletter/index.html">newsletter 보기</a>
+            <a class="button button-secondary" href="../contact/index.html">문의 보내기</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>AiMediaWebsite public MVP.</p>
+        <p>
+          Explore:
+          <a href="../briefs/index.html">briefs</a>,
+          <a href="../weekly/index.html">weekly</a>,
+          <a href="../newsletter/index.html">newsletter</a>,
+          <a href="./index.html">about</a>,
+          <a href="../contact/index.html">contact</a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
