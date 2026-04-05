@@ -6,55 +6,192 @@
     <title>Latest Briefs | AiMediaWebsite</title>
     <meta
       name="description"
-      content="AiMediaWebsite 브리프 템플릿 예정 페이지. Issue #2에서 실제 기사 구조와 출처 섹션을 구현한다."
+      content="운영형과 엔지니어링형으로 갈라지는 AiMediaWebsite의 듀얼 트랙 브리프 시스템. 공식 출처, 팀 공유 출력물, 이번 주 해야 할 일 구조를 한곳에서 본다."
     />
     <link rel="stylesheet" href="../assets/css/main.css" />
   </head>
-  <body class="placeholder-page" data-page="briefs">
+  <body class="briefs-page" data-page="briefs">
     <div class="site-shell">
       <header class="topbar">
-        <a class="brand" href="../index.html">
+        <a class="brand" href="../index.html" aria-label="AiMediaWebsite 홈">
           <span class="brand-mark">AM</span>
           <span class="brand-copy">
             <strong>AiMediaWebsite</strong>
-            <span>Editorial placeholder</span>
+            <span>Dual-track brief system</span>
           </span>
         </a>
-        <nav class="site-nav is-open">
-          <a href="../index.html">Home</a>
-          <a href="./index.html">Latest Briefs</a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" data-site-nav>
+          <a href="../briefs/index.html" aria-current="page">Latest Briefs</a>
           <a href="../categories/index.html">Categories</a>
           <a href="../tools/index.html">Tool Archives</a>
           <a href="../weekly/index.html">Weekly Summary</a>
         </nav>
       </header>
 
-      <main class="placeholder-layout">
-        <section class="panel placeholder-copy reveal">
-          <p class="eyebrow">Issue #2 next</p>
-          <h1>브리프 템플릿은 여기서 실제 기사 형태로 이어집니다.</h1>
-          <p>
-            현재 홈에서는 카드 구조만 고정했고, 이 페이지에서 실제 아티클 템플릿을 정의할 예정입니다. 핵심 구조는 한 줄
-            결론, 무엇이 바뀌었나, 누가 영향받나, 실무 영향, 지금 해야 할 일, FAQ, 원문 출처, CTA 입니다.
-          </p>
-          <div class="placeholder-links">
-            <a class="button button-primary" href="../index.html">홈으로 돌아가기</a>
-            <a class="button button-secondary" href="https://github.com/xAsh-Ai/AiMediaWebsite/issues/2">Issue #2 보기</a>
+      <main>
+        <section class="hub-hero panel reveal">
+          <div class="hub-copy">
+            <p class="eyebrow">Issue #2</p>
+            <h1>브리프는 기사 한 장이 아니라 두 개의 실무 트랙으로 읽혀야 한다</h1>
+            <p class="hub-summary">
+              인터뷰 기준으로 같은 업데이트라도 읽는 사람이 다르면 필요한 요약도 달랐습니다. 그래서 이 페이지는
+              운영형과 엔지니어링형 두 트랙을 나누고, 그 위에 팀 공유용 출력물까지 얹는 구조로 바뀝니다.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="./ops-governance-brief.html">운영형 샘플 보기</a>
+              <a class="button button-secondary" href="./eng-runbook-brief.html">엔지니어링형 샘플 보기</a>
+            </div>
+
+            <ul class="hero-metrics">
+              <li>
+                <span class="metric-label">Tracks</span>
+                <strong>Operations / Engineering</strong>
+              </li>
+              <li>
+                <span class="metric-label">Output</span>
+                <strong>5-line / Slack / Runbook</strong>
+              </li>
+              <li>
+                <span class="metric-label">Evidence</span>
+                <strong>Official-source-first</strong>
+              </li>
+            </ul>
           </div>
+
+          <aside class="hub-board">
+            <div class="board-head">
+              <p class="eyebrow">Template logic</p>
+              <span class="board-badge">System view</span>
+            </div>
+
+            <div class="board-stack">
+              <article class="board-card board-card-hot">
+                <div class="board-card-top">
+                  <span class="status-dot"></span>
+                  <span>Universal core</span>
+                </div>
+                <h2>무엇이 바뀌었나 + 누가 영향받나 + 이번 주 해야 할 일</h2>
+                <p>
+                  두 트랙 모두 유지되는 공통 프레임입니다. 기사처럼 길어지기 전에, 팀이 실제로 움직일 수 있게 순서를
+                  강제합니다.
+                </p>
+              </article>
+
+              <article class="board-card">
+                <div class="board-row">
+                  <span>Ops bias</span>
+                  <strong>policy, enablement, governance</strong>
+                </div>
+                <div class="board-row">
+                  <span>Eng bias</span>
+                  <strong>SDK, deploy, fallback, runbook</strong>
+                </div>
+                <div class="board-row">
+                  <span>Share block</span>
+                  <strong>copy-paste ready</strong>
+                </div>
+              </article>
+
+              <article class="board-card board-card-outline">
+                <p class="eyebrow">Guardrails</p>
+                <ul class="compact-list">
+                  <li>공식 출처 링크는 카드가 아니라 본문 근거 블록으로 노출한다.</li>
+                  <li>트랙 분기와 공유 출력물은 옵션이 아니라 제품 기본값이다.</li>
+                  <li>원문 요약이 아니라 내부 공유 재작성 비용을 줄이는 데 집중한다.</li>
+                </ul>
+              </article>
+            </div>
+          </aside>
         </section>
 
-        <aside class="panel placeholder-card reveal">
-          <h2>Planned article anatomy</h2>
-          <ul>
-            <li>one-line conclusion</li>
-            <li>what changed</li>
-            <li>who is affected</li>
-            <li>what is different from before</li>
-            <li>practical impact</li>
-            <li>what to do now</li>
-            <li>FAQ and source links</li>
-          </ul>
-        </aside>
+        <section class="section-header reveal">
+          <div>
+            <p class="eyebrow">Template selector</p>
+            <h2>읽는 사람에 따라 다른 브리프를 선택한다</h2>
+          </div>
+          <p>
+            두 트랙은 시각 톤만 다른 게 아니라, 우선 보여줘야 하는 정보와 팀에 붙여넣는 출력물까지 다릅니다.
+          </p>
+        </section>
+
+        <section class="template-grid">
+          <a class="template-card template-card-ops reveal" href="./ops-governance-brief.html">
+            <span class="template-index">Track A</span>
+            <h3>운영형 브리프 샘플</h3>
+            <p>
+              모델 단종, 정책 변경, 공지 메일, 위키 업데이트, 교육 자료 수정처럼 운영/거버넌스 관점에서 읽는 버전입니다.
+            </p>
+            <ul class="template-points">
+              <li>리더용 5줄 요약</li>
+              <li>이번 주 체크리스트</li>
+              <li>위키용 요약 블록</li>
+            </ul>
+          </a>
+
+          <a class="template-card template-card-eng reveal" href="./eng-runbook-brief.html">
+            <span class="template-index">Track B</span>
+            <h3>엔지니어링형 브리프 샘플</h3>
+            <p>
+              SDK, endpoint, fallback, staging, rollout, runbook 같은 엔지니어링 실무 기준으로 읽는 버전입니다.
+            </p>
+            <ul class="template-points">
+              <li>Slack-ready 공지 초안</li>
+              <li>런북 메모</li>
+              <li>배포 점검 체크리스트</li>
+            </ul>
+          </a>
+        </section>
+
+        <section class="section-header reveal">
+          <div>
+            <p class="eyebrow">Shared anatomy</p>
+            <h2>두 트랙 모두 지켜야 하는 브리프 공통 구조</h2>
+          </div>
+          <p>트랙이 갈려도 기사 기본 뼈대는 유지합니다. 다만 공통 구조 위에 독자별 강조 순서를 다르게 얹습니다.</p>
+        </section>
+
+        <section class="anatomy-grid">
+          <article class="anatomy-card panel reveal">
+            <h3>Core narrative</h3>
+            <ol class="anatomy-list">
+              <li>one-line conclusion</li>
+              <li>what changed</li>
+              <li>who is affected</li>
+              <li>what is different from before</li>
+              <li>practical impact</li>
+              <li>what to do now</li>
+              <li>FAQ</li>
+            </ol>
+          </article>
+
+          <article class="anatomy-card panel reveal">
+            <h3>Evidence layer</h3>
+            <ol class="anatomy-list">
+              <li>official source links</li>
+              <li>first discovery channel</li>
+              <li>who confirms / shares / acts</li>
+              <li>priority tags</li>
+              <li>trust notes and scope limits</li>
+            </ol>
+          </article>
+
+          <article class="anatomy-card panel reveal">
+            <h3>Share layer</h3>
+            <ol class="anatomy-list">
+              <li>leader 5-line summary</li>
+              <li>this-week checklist</li>
+              <li>Slack-ready note</li>
+              <li>wiki-ready summary</li>
+              <li>runbook memo</li>
+            </ol>
+          </article>
+        </section>
       </main>
     </div>
 
