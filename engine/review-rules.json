@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "rule_key": "official_source_first",
+      "name": "Official source first",
+      "category": "authority",
+      "target": "article",
+      "phase": ["needs_review", "approved"],
+      "blocking": true,
+      "automation_level": "deterministic_plus_manual_confirmation",
+      "pass_condition": "The article links at least one official authority source and no non-official source is treated as the final authority.",
+      "failure_action": "Keep article in needs_review or reject it."
+    },
+    {
+      "rule_key": "practical_impact_present",
+      "name": "Practical impact present",
+      "category": "editorial_quality",
+      "target": "article",
+      "phase": ["processing", "needs_review", "approved"],
+      "blocking": true,
+      "automation_level": "structure_check_plus_manual_confirmation",
+      "pass_condition": "The article includes a practical impact section that states operational or engineering consequences.",
+      "failure_action": "Return to draft or keep in needs_review."
+    },
+    {
+      "rule_key": "what_to_do_now_present",
+      "name": "What to do now present",
+      "category": "actionability",
+      "target": "article",
+      "phase": ["processing", "needs_review", "approved"],
+      "blocking": true,
+      "automation_level": "structure_check_plus_manual_confirmation",
+      "pass_condition": "The article includes a specific what-to-do-now or this-week action block.",
+      "failure_action": "Return to draft or keep in needs_review."
+    },
+    {
+      "rule_key": "cta_present",
+      "name": "CTA present",
+      "category": "template",
+      "target": "article",
+      "phase": ["processing", "needs_review", "approved"],
+      "blocking": true,
+      "automation_level": "deterministic",
+      "pass_condition": "The article contains a CTA block that matches the current site template.",
+      "failure_action": "Return to draft."
+    },
+    {
+      "rule_key": "duplicate_title_exact",
+      "name": "Exact duplicate title check",
+      "category": "duplication",
+      "target": "article",
+      "phase": ["processing", "needs_review", "approved"],
+      "blocking": true,
+      "automation_level": "deterministic",
+      "pass_condition": "No existing published or scheduled article has the exact same normalized title.",
+      "failure_action": "Reject or rewrite before approval."
+    },
+    {
+      "rule_key": "duplicate_similarity",
+      "name": "Near-duplicate similarity check",
+      "category": "duplication",
+      "target": "article",
+      "phase": ["needs_review", "approved"],
+      "blocking": true,
+      "automation_level": "heuristic_plus_manual_confirmation",
+      "pass_condition": "No previously approved or published article exceeds the configured duplicate similarity threshold.",
+      "failure_action": "Escalate to editor for rewrite, merge, or rejection."
+    }
+  ]
+}
