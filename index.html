@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AiMediaWebsite | Official updates, practical decisions.</title>
+    <meta
+      name="description"
+      content="공식 AI/SaaS 업데이트를 실무 영향 중심으로 정리하는 브리프 허브. 바쁜 팀을 위한 변화 요약, 영향 분석, 대응 체크리스트를 한 화면에서 본다."
+    />
+    <script>
+      document.documentElement.classList.add("js-ready");
+    </script>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body data-page="home">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="./index.html" aria-label="AiMediaWebsite 홈">
+          <span class="brand-mark">AM</span>
+          <span class="brand-copy">
+            <strong>AiMediaWebsite</strong>
+            <span>Official updates, practical decisions.</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" data-site-nav>
+          <a href="./briefs/index.html">Latest Briefs</a>
+          <a href="./categories/index.html">Categories</a>
+          <a href="./tools/index.html">Tool Archives</a>
+          <a href="./weekly/index.html">Weekly Summary</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero panel reveal">
+          <div class="hero-copy">
+            <p class="eyebrow">Editorial shell for Issue #1</p>
+            <h1>
+              공식 changelog를
+              <span>실무 판단 화면</span>으로 바꾸는
+              첫 홈 스캐폴드
+            </h1>
+            <p class="hero-summary">
+              이 사이트는 “무슨 기능이 나왔다”보다 “누가 영향받고, 지금 뭘 해야 하는가”를 먼저 보여줍니다.
+              뉴스 피드가 아니라 운영팀의 브리핑 보드처럼 읽히도록 설계했습니다.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="./briefs/index.html">브리프 템플릿 보기</a>
+              <a class="button button-secondary" href="./weekly/index.html">주간 요약 구조 보기</a>
+            </div>
+
+            <ul class="hero-metrics">
+              <li>
+                <span class="metric-label">Focus</span>
+                <strong>Ops + Eng teams</strong>
+              </li>
+              <li>
+                <span class="metric-label">Format</span>
+                <strong>Action brief</strong>
+              </li>
+              <li>
+                <span class="metric-label">Source</span>
+                <strong>Official only</strong>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="hero-board">
+            <div class="board-head">
+              <p class="eyebrow">Signal board</p>
+              <span class="board-badge">MVP draft</span>
+            </div>
+
+            <div class="board-stack">
+              <article class="board-card board-card-hot">
+                <div class="board-card-top">
+                  <span class="status-dot"></span>
+                  <span>Today’s angle</span>
+                </div>
+                <h2>업데이트를 번역하지 않고, 워크플로우 변화만 압축한다.</h2>
+                <p>
+                  홈에서는 최신 소식보다 “지금 봐야 하는 이유”를 먼저 노출합니다. 각 카드가 바로 실무 액션으로
+                  연결되도록 구조를 고정합니다.
+                </p>
+              </article>
+
+              <article class="board-card">
+                <div class="board-row">
+                  <span>Queue</span>
+                  <strong>03 briefs</strong>
+                </div>
+                <div class="board-row">
+                  <span>Tracked desks</span>
+                  <strong>05 tools</strong>
+                </div>
+                <div class="board-row">
+                  <span>Reader tracks</span>
+                  <strong>Operations / Engineering</strong>
+                </div>
+                <div class="board-row">
+                  <span>Share outputs</span>
+                  <strong>5-line / Slack / Runbook</strong>
+                </div>
+              </article>
+
+              <article class="board-card board-card-outline">
+                <p class="eyebrow">Operating rule</p>
+                <ul class="compact-list">
+                  <li>공식 출처 링크는 숨기지 않는다.</li>
+                  <li>실무 영향과 대응 체크리스트를 분리한다.</li>
+                  <li>자동화보다 수동 편집 품질을 먼저 검증한다.</li>
+                </ul>
+              </article>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section-header reveal">
+          <div>
+            <p class="eyebrow">Latest briefs</p>
+            <h2>지금 검증 중인 seed brief 2건과 다음 큐 1건</h2>
+          </div>
+          <p>
+            수동 발행으로 먼저 검증하는 seed를 홈에 직접 올립니다. 각 카드에는 공식 근거, 영향 팀, 이번 주 할 일,
+            선호 공유 형식이 같이 남아야 합니다.
+          </p>
+        </section>
+
+        <section class="brief-grid">
+          <article class="brief-card panel reveal">
+            <div class="card-meta">
+              <span class="tag tag-seed">Seed 01</span>
+              <span>OpenAI deprecations</span>
+            </div>
+            <div class="brief-card-flags">
+              <span class="brief-track-badge brief-track-ops">Operations track</span>
+              <span class="priority-pill priority-pill-light priority-security">Security</span>
+              <span class="priority-pill priority-pill-light priority-education">Education</span>
+              <span class="priority-pill priority-pill-light priority-breaking">Breaking</span>
+            </div>
+            <h3><a href="./briefs/ops-governance-brief.html">모델 단종 공지는 기술 변경보다 먼저 팀별 공지 순서를 정해야 한다</a></h3>
+            <p class="card-kicker">First seen via official email + docs</p>
+            <ul class="signal-list">
+              <li><strong>Who confirms</strong><span>AI governance / security lead</span></li>
+              <li><strong>What to do this week</strong><span>영향 팀 식별, 위키 갱신, 교육 자료 반영</span></li>
+              <li><strong>Preferred share</strong><span>Leader 5-line / Wiki summary / Checklist</span></li>
+            </ul>
+          </article>
+
+          <article class="brief-card panel reveal">
+            <div class="card-meta">
+              <span class="tag tag-seed">Seed 02</span>
+              <span>OpenAI + Vercel changelog</span>
+            </div>
+            <div class="brief-card-flags">
+              <span class="brief-track-badge brief-track-eng">Engineering track</span>
+              <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+              <span class="priority-pill priority-pill-light priority-cost">Cost</span>
+              <span class="priority-pill priority-pill-light priority-nonbreaking">Non-breaking</span>
+            </div>
+            <h3><a href="./briefs/eng-runbook-brief.html">권장 엔드포인트 변경 소식은 fallback과 배포 순서를 먼저 적어야 한다</a></h3>
+            <p class="card-kicker">First seen via X, then official changelog</p>
+            <ul class="signal-list">
+              <li><strong>Who confirms</strong><span>backend owner + platform engineer</span></li>
+              <li><strong>What to do this week</strong><span>staging smoke, fallback memo, env diff check</span></li>
+              <li><strong>Preferred share</strong><span>Slack-ready note / Runbook memo / Checklist</span></li>
+            </ul>
+          </article>
+
+          <article class="brief-card panel reveal">
+            <div class="card-meta">
+              <span class="tag tag-queue">Queue next</span>
+              <span>Cursor desk</span>
+            </div>
+            <div class="brief-card-flags">
+              <span class="brief-track-badge brief-track-shared">Ops + Eng</span>
+              <span class="priority-pill priority-pill-light priority-security">Security</span>
+              <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+            </div>
+            <h3>Cursor 업데이트 이후 규칙 파일, 버전 고정, 팀 공지를 같이 다루는 후속 seed</h3>
+            <p class="card-kicker">Next candidate from interview response B</p>
+            <ul class="signal-list">
+              <li><strong>Official source</strong><span>Cursor changelog + release note confirmation</span></li>
+              <li><strong>Action types</strong><span>rules file sync, extension version align, team Slack note</span></li>
+              <li><strong>Why queued</strong><span>track-shared output과 tool archive 연결성을 같이 검증하기 위해</span></li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section-header reveal">
+          <div>
+            <p class="eyebrow">Reader tracks</p>
+            <h2>같은 업데이트라도 읽는 사람과 팀 액션은 다르다</h2>
+          </div>
+          <p>
+            인터뷰 기준으로 브리프는 최소 두 갈래로 갈라져야 합니다. 운영형은 정책·교육·가이드 반영을, 엔지니어링형은
+            SDK·런북·배포 영향 점검을 우선 보여줘야 합니다.
+          </p>
+        </section>
+
+        <section class="track-layout">
+          <article class="panel track-panel reveal">
+            <div class="track-grid">
+              <section class="track-card track-card-ops">
+                <p class="eyebrow">Track A</p>
+                <h3>운영형 브리프</h3>
+                <p class="track-summary">
+                  AI 거버넌스, 보안, 교육, 계정 운영, 사내 가이드 반영을 맡는 사람을 위한 버전입니다.
+                </p>
+                <ul class="track-points">
+                  <li><strong>먼저 보는 것</strong><span>누가 영향받는지, 어떤 팀에 공지해야 하는지</span></li>
+                  <li><strong>자주 붙는 일</strong><span>정책 반영, 위키 수정, 교육 자료 업데이트</span></li>
+                  <li><strong>원하는 출력물</strong><span>리더용 5줄, 체크리스트, 위키용 요약</span></li>
+                </ul>
+              </section>
+
+              <section class="track-card track-card-eng">
+                <p class="eyebrow">Track B</p>
+                <h3>엔지니어링형 브리프</h3>
+                <p class="track-summary">
+                  API, SDK, 배포, 온콜, 런북, 에이전트 코드 반영을 맡는 사람을 위한 버전입니다.
+                </p>
+                <ul class="track-points">
+                  <li><strong>먼저 보는 것</strong><span>breaking 여부, fallback, 배포 영향, 재현 가능성</span></li>
+                  <li><strong>자주 붙는 일</strong><span>SDK 점검, 환경 변수 수정, 스테이징 테스트, 런북 갱신</span></li>
+                  <li><strong>원하는 출력물</strong><span>Slack 초안, 런북 메모, 배포 점검 메모</span></li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="panel output-panel reveal">
+            <p class="eyebrow">Team-share outputs</p>
+            <h3>브리프는 읽고 끝나는 페이지가 아니라 공유용 원재료여야 한다</h3>
+            <p class="output-summary">
+              인터뷰에서 반복된 요구는 동일했습니다. changelog 자체보다, 팀 채널에 다시 붙일 수 있는 형태가 더 필요했습니다.
+            </p>
+
+            <div class="priority-cluster output-tags">
+              <span class="priority-pill priority-breaking">Breaking</span>
+              <span class="priority-pill priority-nonbreaking">Non-breaking</span>
+              <span class="priority-pill priority-cost">Cost</span>
+              <span class="priority-pill priority-security">Security</span>
+              <span class="priority-pill priority-education">Education</span>
+              <span class="priority-pill priority-deployment">Deployment</span>
+            </div>
+
+            <p class="output-rule">
+              다섯 가지 출력을 모든 브리프에 강제하지 않습니다. 운영형은 Leader / Wiki / Checklist, 엔지니어링형은
+              Slack / Runbook / Checklist를 기본값으로 둡니다.
+            </p>
+
+            <div class="share-grid">
+              <article class="share-block share-block-leader">
+                <div class="share-block-head">
+                  <span class="share-label">Leader 5-line</span>
+                  <span class="share-track share-track-ops">Ops default</span>
+                </div>
+                <p>의사결정자에게 보내는 결론, 일정, 요청 5줄.</p>
+              </article>
+              <article class="share-block share-block-checklist">
+                <div class="share-block-head">
+                  <span class="share-label">This-week checklist</span>
+                  <span class="share-track share-track-shared">Shared core</span>
+                </div>
+                <p>금주 반영 항목과 담당 팀을 바로 나눌 수 있는 실행 목록.</p>
+              </article>
+              <article class="share-block share-block-slack">
+                <div class="share-block-head">
+                  <span class="share-label">Slack-ready note</span>
+                  <span class="share-track share-track-eng">Eng default</span>
+                </div>
+                <p>팀 채널에 바로 붙이는 배포/점검 공지 초안.</p>
+              </article>
+              <article class="share-block share-block-wiki">
+                <div class="share-block-head">
+                  <span class="share-label">Wiki summary</span>
+                  <span class="share-track share-track-ops">Ops default</span>
+                </div>
+                <p>정책, 교육, 가이드 반영을 위한 사내 문서 요약.</p>
+              </article>
+              <article class="share-block share-block-runbook">
+                <div class="share-block-head">
+                  <span class="share-label">Runbook memo</span>
+                  <span class="share-track share-track-eng">Eng default</span>
+                </div>
+                <p>fallback, rollback, on-call handoff를 위한 운영 메모.</p>
+              </article>
+            </div>
+
+            <div class="evidence-flow">
+              <span>source</span>
+              <span>confirm</span>
+              <span>share</span>
+              <span>act</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="split-layout">
+          <article class="panel lens-panel reveal">
+            <div class="section-header compact">
+              <div>
+                <p class="eyebrow">Category lens</p>
+                <h2>카테고리로 보는 이유</h2>
+              </div>
+            </div>
+
+            <div class="lens-grid">
+              <a class="lens-card" href="./categories/index.html#models">
+                <span class="lens-index">01</span>
+                <strong>Model / API changes</strong>
+                <p>breaking change, deprecation, schema drift를 우선 추적합니다.</p>
+              </a>
+              <a class="lens-card" href="./categories/index.html#coding-tools">
+                <span class="lens-index">02</span>
+                <strong>Coding tool updates</strong>
+                <p>개발 생산성보다 정책 영향과 협업 방식 변화에 초점을 둡니다.</p>
+              </a>
+              <a class="lens-card" href="./categories/index.html#infra">
+                <span class="lens-index">03</span>
+                <strong>Deploy / infra shifts</strong>
+                <p>배포 방식, 런타임, 과금 경계가 바뀌는 순간을 모읍니다.</p>
+              </a>
+              <a class="lens-card" href="./categories/index.html#pricing">
+                <span class="lens-index">04</span>
+                <strong>Pricing / plan changes</strong>
+                <p>예산과 권한 모델이 바뀌는 업데이트를 별도 허브로 묶습니다.</p>
+              </a>
+              <a class="lens-card" href="./categories/index.html#agents">
+                <span class="lens-index">05</span>
+                <strong>Automation / agent features</strong>
+                <p>에이전트 권한, 운영 안정성, 승인 플로우 변화를 빠르게 표시합니다.</p>
+              </a>
+            </div>
+          </article>
+
+          <article class="panel desk-panel reveal">
+            <div class="section-header compact">
+              <div>
+                <p class="eyebrow">Tool desks</p>
+                <h2>초기 추적 대상 5개</h2>
+              </div>
+            </div>
+
+            <div class="desk-list">
+              <a class="desk-item" href="./tools/index.html#openai">
+                <strong>OpenAI</strong>
+                <span>API changelog, ChatGPT release notes, model lifecycle</span>
+              </a>
+              <a class="desk-item" href="./tools/index.html#anthropic">
+                <strong>Anthropic</strong>
+                <span>Claude release notes, API policy and workflow shifts</span>
+              </a>
+              <a class="desk-item" href="./tools/index.html#cursor">
+                <strong>Cursor</strong>
+                <span>editor agents, permissions, enterprise fit</span>
+              </a>
+              <a class="desk-item" href="./tools/index.html#vercel">
+                <strong>Vercel</strong>
+                <span>runtime, deployments, limits, pricing</span>
+              </a>
+              <a class="desk-item" href="./tools/index.html#supabase">
+                <strong>Supabase</strong>
+                <span>database, auth, functions, operational changes</span>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <section class="weekly-strip panel reveal">
+          <div>
+            <p class="eyebrow">Weekly summary</p>
+            <h2>주간 요약은 단순 묶음이 아니라 우선순위 회고다</h2>
+          </div>
+          <div class="weekly-columns">
+            <article>
+              <h3>1. 이번 주에 진짜 컸던 변화</h3>
+              <p>가장 넓은 팀에 영향을 준 변화만 첫 블록으로 올립니다.</p>
+            </article>
+            <article>
+              <h3>2. 아직 대응 안 해도 되는 변화</h3>
+              <p>보류 가능한 항목을 같이 적어 불필요한 불안을 줄입니다.</p>
+            </article>
+            <article>
+              <h3>3. 다음 주 운영 체크리스트</h3>
+              <p>문서 갱신, 알림 룰, SDK 점검 같은 실제 액션으로 마감합니다.</p>
+            </article>
+          </div>
+          <a class="button button-secondary" href="./weekly/index.html">주간 요약 플레이스홀더 열기</a>
+        </section>
+
+        <section class="cta-band reveal">
+          <div>
+            <p class="eyebrow">Newsletter CTA</p>
+            <h2>지금은 구독 폼보다 운영 루프가 먼저다</h2>
+            <p>
+              MVP 단계에서는 이메일 수집보다 “공식 소스 1개를 끝까지 발행할 수 있는가”를 먼저 검증합니다. 그래서 이
+              CTA는 임시로 수동 발행 워크플로우 페이지로 연결됩니다.
+            </p>
+          </div>
+          <a class="button button-primary" href="./weekly/index.html">수동 발행 플로우 보기</a>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>AiMediaWebsite MVP shell for issue #1.</p>
+        <p>
+          다음 단계:
+          <a href="./briefs/index.html">article template</a>,
+          <a href="./categories/index.html">category navigation</a>,
+          <a href="./tools/index.html">tool archives</a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

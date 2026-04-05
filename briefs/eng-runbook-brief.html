@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering Seed Brief | AiMediaWebsite</title>
+    <meta
+      name="description"
+      content="엔지니어링형 seed brief. API 권장 엔드포인트 변경과 fallback, staging, runbook 갱신을 중심으로 정리한 실제 초기 엔트리."
+    />
+    <script>
+      document.documentElement.classList.add("js-ready");
+    </script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="article-page" data-page="briefs">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="../index.html" aria-label="AiMediaWebsite 홈">
+          <span class="brand-mark">AM</span>
+          <span class="brand-copy">
+            <strong>AiMediaWebsite</strong>
+            <span>Engineering seed brief</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" data-site-nav>
+          <a href="../briefs/index.html" aria-current="page">Latest Briefs</a>
+          <a href="../categories/index.html">Categories</a>
+          <a href="../tools/index.html">Tool Archives</a>
+          <a href="../weekly/index.html">Weekly Summary</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="article-hero panel reveal">
+          <div class="article-hero-main">
+            <div class="article-kicker-row">
+              <span class="brief-track-badge brief-track-eng">Engineering track</span>
+              <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+              <span class="priority-pill priority-pill-light priority-cost">Cost</span>
+              <span class="priority-pill priority-pill-light priority-nonbreaking">Non-breaking</span>
+            </div>
+
+            <p class="eyebrow">Seed brief / OpenAI + Vercel desk</p>
+            <h1>권장 엔드포인트 변경 소식은 SDK 업데이트보다 fallback과 배포 순서를 먼저 적어야 한다</h1>
+            <p class="article-standfirst">
+              엔지니어링형 독자에게는 changelog 설명보다도 “어떤 호출 경로가 바뀌고, 어떤 스테이징 테스트와 런북 수정이
+              필요한가”가 중요합니다. 이 페이지는 그 관점으로 구성된 샘플 브리프입니다.
+            </p>
+          </div>
+
+          <aside class="article-hero-side">
+            <p class="eyebrow">One-line conclusion</p>
+            <p class="article-conclusion">
+              엔드포인트 변경은 코드 한 줄보다 fallback 경로, staging smoke, rollout 공지 순서를 먼저 정의해야 사고를 줄입니다.
+            </p>
+          </aside>
+        </section>
+
+        <div class="article-layout">
+          <article class="article-main panel reveal">
+            <section class="article-section">
+              <p class="section-label">What changed</p>
+              <h2>공식 문서가 새 권장 엔드포인트와 이전 경로의 축소 방향을 안내하고 있다</h2>
+              <p>
+                엔지니어링형 브리프에서는 기능 설명보다 “현재 스테이징/프로덕션 라우팅이 영향을 받는지”가 먼저입니다.
+                특히 Vercel 배포와 API 호출이 한 주에 함께 움직이면 운영 실수가 늘어납니다.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Who is affected</p>
+              <div class="info-grid">
+                <article class="info-card">
+                  <strong>Backend owners</strong>
+                  <span>SDK, request path, response handling, timeout과 retry 로직을 확인해야 합니다.</span>
+                </article>
+                <article class="info-card">
+                  <strong>Platform / DevOps</strong>
+                  <span>배포 순서, 환경 변수, rollout timing과 fallback 문서를 갱신해야 합니다.</span>
+                </article>
+                <article class="info-card">
+                  <strong>On-call engineers</strong>
+                  <span>실패 시 어떤 모델/엔드포인트로 우회하는지 런북에 반영돼야 합니다.</span>
+                </article>
+              </div>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">What is different</p>
+              <p>
+                단순 SDK 버전 업이 아니라, 어떤 경로를 기본값으로 쓰고 어떤 경로를 fallback으로 둘지 결정해야 한다는 점이
+                다릅니다. 그래서 이 브리프는 구현 코드보다 운영 경계와 재현 시나리오를 먼저 적습니다.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Practical impact</p>
+              <ul class="article-list">
+                <li>환경 변수만 바꾸고 staging smoke를 생략하면 실제 응답 차이를 놓칠 수 있습니다.</li>
+                <li>fallback 경로를 런북에 적지 않으면 온콜 대응 시간이 길어집니다.</li>
+                <li>배포 공지가 늦으면 프런트/백엔드가 서로 다른 전제 위에서 디버깅하게 됩니다.</li>
+              </ul>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">What to do now</p>
+              <ol class="article-list ordered">
+                <li>현재 사용 중인 SDK와 엔드포인트를 인벤토리화한다.</li>
+                <li>staging에서 요청 경로와 응답 파서를 smoke test 한다.</li>
+                <li>실패 시 fallback 경로와 조건을 런북에 적는다.</li>
+                <li>배포 순서와 롤백 조건을 Slack 초안으로 먼저 공유한다.</li>
+              </ol>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">FAQ</p>
+              <div class="faq-stack">
+                <article class="faq-card">
+                  <h3>Q. 엔지니어링형 브리프는 왜 Slack 초안이 필요한가요?</h3>
+                  <p>A. 인터뷰 기준으로 기술 판단 자체보다 팀 채널 공유 문장을 다시 쓰는 비용이 반복적으로 컸기 때문입니다.</p>
+                </article>
+                <article class="faq-card">
+                  <h3>Q. Non-breaking으로 태그돼도 바로 확인해야 하나요?</h3>
+                  <p>A. 네. 엔지니어링형에선 Non-breaking이어도 fallback, cost, deploy sequencing에 영향을 주면 금주 점검 항목으로 들어갈 수 있습니다.</p>
+                </article>
+              </div>
+            </section>
+          </article>
+
+          <aside class="article-aside">
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Official sources</p>
+              <ul class="source-list">
+                <li><a href="https://platform.openai.com/docs/changelog">OpenAI changelog</a></li>
+                <li><a href="https://vercel.com/changelog">Vercel changelog</a></li>
+              </ul>
+            </section>
+
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Evidence flow</p>
+              <dl class="evidence-list">
+                <div>
+                  <dt>First seen via</dt>
+                  <dd>X link, then official changelog</dd>
+                </div>
+                <div>
+                  <dt>Who confirms</dt>
+                  <dd>backend owner + platform engineer</dd>
+                </div>
+                <div>
+                  <dt>Who shares</dt>
+                  <dd>team channel + on-call handoff</dd>
+                </div>
+                <div>
+                  <dt>Who acts</dt>
+                  <dd>backend, DevOps, on-call</dd>
+                </div>
+                <div>
+                  <dt>Action types</dt>
+                  <dd>staging smoke test, fallback memo, env diff check, on-call 공유</dd>
+                </div>
+                <div>
+                  <dt>Preferred share</dt>
+                  <dd>Slack-ready note + runbook memo + checklist</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Share blocks</p>
+              <div class="share-stack">
+                <article class="share-block share-block-slack">
+                  <div class="share-block-head">
+                    <span class="share-label">Slack-ready note</span>
+                    <span class="share-track share-track-eng">Eng default</span>
+                  </div>
+                  <p>
+                    금주 API 권장 경로 변경 확인. staging smoke와 fallback 점검 후 내일 배포 예정. 런북 경로와 rollback 조건은
+                    thread에 정리하겠습니다.
+                  </p>
+                </article>
+
+                <article class="share-block share-block-runbook">
+                  <div class="share-block-head">
+                    <span class="share-label">Runbook memo</span>
+                    <span class="share-track share-track-eng">Eng default</span>
+                  </div>
+                  <ul class="article-list">
+                    <li>fallback 모델 / 엔드포인트 경로</li>
+                    <li>response parser diff 확인</li>
+                    <li>retry / timeout 정책 재검토</li>
+                    <li>rollback trigger 명시</li>
+                  </ul>
+                </article>
+
+                <article class="share-block share-block-checklist">
+                  <div class="share-block-head">
+                    <span class="share-label">This-week checklist</span>
+                    <span class="share-track share-track-shared">Shared core</span>
+                  </div>
+                  <ul class="article-list">
+                    <li>SDK version audit</li>
+                    <li>staging smoke test</li>
+                    <li>env var diff check</li>
+                    <li>on-call memo update</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

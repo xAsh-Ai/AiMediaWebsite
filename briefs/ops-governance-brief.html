@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operations Seed Brief | AiMediaWebsite</title>
+    <meta
+      name="description"
+      content="운영형 seed brief. 모델 단종 공지 같은 공식 업데이트를 정책·교육·위키·계정 운영 관점으로 정리하는 실제 초기 엔트리."
+    />
+    <script>
+      document.documentElement.classList.add("js-ready");
+    </script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body class="article-page" data-page="briefs">
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="../index.html" aria-label="AiMediaWebsite 홈">
+          <span class="brand-mark">AM</span>
+          <span class="brand-copy">
+            <strong>AiMediaWebsite</strong>
+            <span>Operations seed brief</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+          Menu
+        </button>
+
+        <nav class="site-nav" id="site-nav" data-site-nav>
+          <a href="../briefs/index.html" aria-current="page">Latest Briefs</a>
+          <a href="../categories/index.html">Categories</a>
+          <a href="../tools/index.html">Tool Archives</a>
+          <a href="../weekly/index.html">Weekly Summary</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="article-hero panel reveal">
+          <div class="article-hero-main">
+            <div class="article-kicker-row">
+              <span class="brief-track-badge brief-track-ops">Operations track</span>
+              <span class="priority-pill priority-pill-light priority-security">Security</span>
+              <span class="priority-pill priority-pill-light priority-education">Education</span>
+              <span class="priority-pill priority-pill-light priority-breaking">Breaking</span>
+            </div>
+
+            <p class="eyebrow">Seed brief / OpenAI desk</p>
+            <h1>모델 단종 공지는 기술 변경보다 먼저 팀별 공지 순서를 정해야 한다</h1>
+            <p class="article-standfirst">
+              운영형 독자에게는 “무슨 모델이 없어지나”보다 “어떤 워크스페이스, 어떤 팀, 어떤 교육 자료가 먼저 영향을
+              받는가”가 핵심입니다. 이 페이지는 그 관점으로 구성된 샘플 브리프입니다.
+            </p>
+          </div>
+
+          <aside class="article-hero-side">
+            <p class="eyebrow">One-line conclusion</p>
+            <p class="article-conclusion">
+              단종 공지가 보이면 먼저 영향 팀을 분류하고, 리더용 5줄 요약과 위키 체크리스트를 같은 날 배포해야 합니다.
+            </p>
+          </aside>
+        </section>
+
+        <div class="article-layout">
+          <article class="article-main panel reveal">
+            <section class="article-section">
+              <p class="section-label">What changed</p>
+              <h2>특정 모델의 단종 일정과 대체 경로가 공식 문서에 추가됐다</h2>
+              <p>
+                공식 이메일과 deprecations 문서에 만료일과 권장 대체 모델이 함께 올라온 상황을 가정합니다. 운영형
+                관점에서는 API 상세보다 “현재 어떤 내부 템플릿과 가이드가 영향권인지”가 먼저입니다.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Who is affected</p>
+              <div class="info-grid">
+                <article class="info-card">
+                  <strong>AI governance</strong>
+                  <span>내부 정책, 승인 범위, 계정 정리 기준을 업데이트해야 합니다.</span>
+                </article>
+                <article class="info-card">
+                  <strong>Enablement / education</strong>
+                  <span>프롬프트 교육 자료와 실습 문서가 오래된 모델명을 계속 참조할 수 있습니다.</span>
+                </article>
+                <article class="info-card">
+                  <strong>Team leads</strong>
+                  <span>어떤 팀이 언제까지 마이그레이션해야 하는지 우선순위를 받지 못하면 공지가 묻힙니다.</span>
+                </article>
+              </div>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">What is different</p>
+              <p>
+                이전엔 개발자 개인이 모델명을 바꿔도 끝났다면, 이제는 사내 위키, 교육 자료, 계정 범위, 승인 절차까지
+                묶여 움직입니다. 운영형 브리프는 이 연결 비용을 먼저 설명해야 합니다.
+              </p>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">Practical impact</p>
+              <ul class="article-list">
+                <li>영향 워크스페이스를 분류하지 않으면 공지가 지나치게 넓거나 지나치게 좁아집니다.</li>
+                <li>교육 자료 수정 타이밍이 늦으면 현장에는 구형 모델명이 계속 남습니다.</li>
+                <li>감사/보안 채널과 제품팀 채널이 분리돼 있으면 중복 공유가 생깁니다.</li>
+              </ul>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">What to do now</p>
+              <ol class="article-list ordered">
+                <li>영향 워크스페이스와 팀 목록을 먼저 만든다.</li>
+                <li>리더용 5줄 요약으로 “왜 지금 봐야 하는가”를 먼저 보낸다.</li>
+                <li>위키에 대체 모델, 만료일, 교육 반영 체크 항목을 올린다.</li>
+                <li>교육 담당자와 보안/운영 담당자에게 서로 다른 체크리스트를 분리해 전달한다.</li>
+              </ol>
+            </section>
+
+            <section class="article-section">
+              <p class="section-label">FAQ</p>
+              <div class="faq-stack">
+                <article class="faq-card">
+                  <h3>Q. 운영형 브리프에서 API 세부 변경까지 다 다뤄야 하나요?</h3>
+                  <p>A. 아닙니다. 운영형에선 팀별 영향과 공지/교육 반영 순서를 먼저 고정하고, 세부 구현은 엔지니어링형 링크로 넘기는 편이 낫습니다.</p>
+                </article>
+                <article class="faq-card">
+                  <h3>Q. 누가 먼저 확인하고 누가 공유하는지까지 적는 이유는 무엇인가요?</h3>
+                  <p>A. 인터뷰 기준으로 changelog 해석보다 내부 공유 재작성 비용이 더 컸기 때문입니다. 확인/공유/실행 흐름을 적어야 실제 액션으로 이어집니다.</p>
+                </article>
+              </div>
+            </section>
+          </article>
+
+          <aside class="article-aside">
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Official sources</p>
+              <ul class="source-list">
+                <li><a href="https://platform.openai.com/docs/deprecations">OpenAI deprecations</a></li>
+                <li><a href="https://platform.openai.com/docs/changelog">OpenAI changelog</a></li>
+              </ul>
+            </section>
+
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Evidence flow</p>
+              <dl class="evidence-list">
+                <div>
+                  <dt>First seen via</dt>
+                  <dd>공식 이메일 + deprecations 문서</dd>
+                </div>
+                <div>
+                  <dt>Who confirms</dt>
+                  <dd>AI governance / security lead</dd>
+                </div>
+                <div>
+                  <dt>Who shares</dt>
+                  <dd>운영 담당 + 교육 담당</dd>
+                </div>
+                <div>
+                  <dt>Who acts</dt>
+                  <dd>팀 리드, 교육, 계정 운영</dd>
+                </div>
+                <div>
+                  <dt>Action types</dt>
+                  <dd>영향 팀 식별, 위키 반영, 교육 자료 수정 요청, 계정 범위 점검</dd>
+                </div>
+                <div>
+                  <dt>Preferred share</dt>
+                  <dd>Leader 5-line + wiki summary + checklist</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section class="aside-card panel reveal">
+              <p class="eyebrow">Share blocks</p>
+              <div class="share-stack">
+                <article class="share-block share-block-leader">
+                  <div class="share-block-head">
+                    <span class="share-label">Leader 5-line</span>
+                    <span class="share-track share-track-ops">Ops default</span>
+                  </div>
+                  <p>1. 특정 모델 단종 일정이 공식 공지로 확정됨.</p>
+                  <p>2. 영향 대상은 템플릿 사용 팀과 교육 자료임.</p>
+                  <p>3. 금주 내 대체 모델 공지와 위키 갱신이 필요.</p>
+                  <p>4. 교육 자료 수정 요청을 병행해야 함.</p>
+                  <p>5. 체크리스트 링크를 함께 배포할 것.</p>
+                </article>
+
+                <article class="share-block share-block-wiki">
+                  <div class="share-block-head">
+                    <span class="share-label">Wiki-ready summary</span>
+                    <span class="share-track share-track-ops">Ops default</span>
+                  </div>
+                  <p>
+                    만료일, 대체 모델, 영향 팀, 교육 반영 여부, 계정 범위, 공지 완료 상태를 한 표로 정리해 위키에
+                    저장합니다.
+                  </p>
+                </article>
+
+                <article class="share-block share-block-checklist">
+                  <div class="share-block-head">
+                    <span class="share-label">This-week checklist</span>
+                    <span class="share-track share-track-shared">Shared core</span>
+                  </div>
+                  <ul class="article-list">
+                    <li>영향 워크스페이스 식별</li>
+                    <li>리더용 5줄 공지 배포</li>
+                    <li>위키 / 교육 자료 갱신</li>
+                    <li>계정 운영 정책 확인</li>
+                  </ul>
+                </article>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
