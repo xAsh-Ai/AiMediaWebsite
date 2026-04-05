@@ -3,7 +3,7 @@
   "content_job": {
     "field": "status",
     "initial_state": "queued",
-    "terminal_states": ["approved", "rejected", "archived"],
+    "terminal_states": ["archived"],
     "states": [
       {
         "id": "queued",
@@ -48,7 +48,7 @@
   "article": {
     "field": "review_status",
     "initial_state": "draft",
-    "terminal_states": ["published", "rejected", "archived"],
+    "terminal_states": ["archived"],
     "states": [
       {
         "id": "draft",
@@ -99,7 +99,9 @@
   },
   "review_log": {
     "result_values": ["pass", "fail", "warn", "skip"],
-    "required_fields": ["id", "article_id", "rule_key", "result", "message", "created_at"]
+    "required_base_fields": ["id", "rule_key", "result", "message", "created_at"],
+    "record_ref_fields": ["article_id", "content_job_id"],
+    "record_ref_requirement": "exactly_one"
   },
   "channel_package": {
     "types": ["web_publish", "newsletter_batch", "future_dispatch"],

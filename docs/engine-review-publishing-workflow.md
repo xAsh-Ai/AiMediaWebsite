@@ -6,7 +6,7 @@
 
 - define the lifecycle from normalized source item to published article
 - make review rules explicit enough to implement as code
-- separate `content_jobs`, `articles`, and `review_logs` into clear responsibilities
+- separate `content_job`, `article`, and `review_log` into clear responsibilities
 - show where manual review still owns the decision and where future automation can take over
 
 ## Workflow records
@@ -16,7 +16,7 @@
 | `source_item` | one normalized vendor update candidate | after fetch + normalize |
 | `content_job` | one attempt to turn a source item into publishable content | when the editorial engine accepts a source item |
 | `article` | the web-facing brief or explainer draft | when generation produces a draft body |
-| `review_log` | one rule evaluation result attached to an article or job | whenever a rule runs |
+| `review_log` | one rule evaluation result attached to either an article or a content job | whenever a rule runs |
 | `channel_package` | derived packaging for web index, newsletter, or future dispatch channels | after approval or scheduling |
 
 ## Relationship model
@@ -25,7 +25,8 @@ The minimum implementation relationship is:
 
 - one `source_item` can spawn zero or more `content_jobs`
 - one `content_job` owns exactly one current `article` draft
-- one `article` can accumulate many `review_logs`
+- one `content_job` can accumulate many `review_logs` during preflight or rejection checks
+- one `article` can accumulate many `review_logs` after a draft exists
 - one approved `article` can feed many `channel_package` records over time
 
 This allows:
@@ -38,7 +39,9 @@ This allows:
 
 The machine-readable definition lives in [`engine/workflow-state.json`](../engine/workflow-state.json).
 
-### `content_jobs.status`
+Config keys stay singular in JSON: `content_job`, `article`, `review_log`, and `channel_package`.
+
+### `content_job.status`
 
 | State | Meaning | Typical owner |
 | --- | --- | --- |
@@ -49,7 +52,7 @@ The machine-readable definition lives in [`engine/workflow-state.json`](../engin
 | `rejected` | candidate should not proceed because it is weak, duplicate, or low-impact | editor |
 | `archived` | job is kept for audit, but no longer active | automation or editor |
 
-### `articles.review_status`
+### `article.review_status`
 
 | State | Meaning | Typical owner |
 | --- | --- | --- |
@@ -86,6 +89,8 @@ flowchart LR
 
 The machine-readable rule set lives in [`engine/review-rules.json`](../engine/review-rules.json).
 
+Each rule declares both a `target` and a `phase_field`. In v0, the blocking rules inspect the `article` content but execute against `content_job.status` so preflight and editor checks share the same gate.
+
 The initial blocking rules are:
 
 | Rule key | Why it exists | Blocks approval |
@@ -101,15 +106,15 @@ Supporting manual checks can still emit warnings instead of hard failure, but th
 
 ## Rule execution order
 
-1. `processing`
+1. `content_job.processing`
    Run deterministic structure checks on the draft and create initial `review_logs`.
-2. `needs_review`
+2. `content_job.needs_review`
    Human editor confirms authority, impact, audience track, and actionability.
-3. `approved`
+3. `content_job.approved` and `article.approved`
    Approval only happens if all blocking rules are `pass`.
-4. `scheduled`
+4. `article.scheduled`
    Channel packaging can begin after approval.
-5. `published`
+5. `article.published`
    Publish writes the final web artifact and closes the workflow loop.
 
 ## Publishing layer responsibilities
@@ -152,18 +157,19 @@ Automation can own:
 
 ## Review log contract
 
-`review_logs` should be append-only and minimal:
+`review_logs` are append-only and contain only the following minimal fields.
 
 | Field | Meaning |
 | --- | --- |
 | `id` | stable log identifier |
-| `article_id` | article being checked |
+| `article_id` | article being checked when the log is article-scoped |
+| `content_job_id` | content job being checked when the log is job-scoped |
 | `rule_key` | rule that ran |
 | `result` | `pass`, `fail`, `warn`, or `skip` |
 | `message` | human-readable explanation |
 | `created_at` | timestamp of the evaluation |
 
-This keeps the audit trail stable even if the article or rule definitions evolve.
+Exactly one of `article_id` or `content_job_id` must be present on each log entry. This keeps the audit trail stable even if the article or rule definitions evolve.
 
 ## Implementation boundary
 
