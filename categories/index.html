@@ -6,21 +6,21 @@
     <title>Categories | AiMediaWebsite</title>
     <meta
       name="description"
-      content="AiMediaWebsite 카테고리 네비게이션 예정 페이지. Issue #3에서 실제 카테고리 허브와 탐색 구조를 구현한다."
+      content="AiMediaWebsite 카테고리 허브. 모델/API, 코딩 도구, 배포/인프라, 과금/플랜, 자동화/에이전트 5개 판단축으로 현재 seed와 다음 큐를 탐색한다."
     />
     <script>
       document.documentElement.classList.add("js-ready");
     </script>
     <link rel="stylesheet" href="../assets/css/main.css" />
   </head>
-  <body class="placeholder-page" data-page="categories">
+  <body class="archive-page" data-page="categories">
     <div class="site-shell">
       <header class="topbar">
-        <a class="brand" href="../index.html">
+        <a class="brand" href="../index.html" aria-label="AiMediaWebsite 홈">
           <span class="brand-mark">AM</span>
           <span class="brand-copy">
             <strong>AiMediaWebsite</strong>
-            <span>Editorial placeholder</span>
+            <span>Category browse hub</span>
           </span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
@@ -29,36 +29,143 @@
         <nav class="site-nav" id="site-nav" data-site-nav>
           <a href="../index.html">Home</a>
           <a href="../briefs/index.html">Latest Briefs</a>
-          <a href="./index.html">Categories</a>
+          <a href="./index.html" aria-current="page">Categories</a>
           <a href="../tools/index.html">Tool Archives</a>
           <a href="../weekly/index.html">Weekly Summary</a>
         </nav>
       </header>
 
-      <main class="placeholder-layout">
-        <section class="panel placeholder-copy reveal">
-          <p class="eyebrow">Issue #3 next</p>
-          <h1>카테고리 허브는 정보량보다 판단축을 먼저 보여줘야 합니다.</h1>
-          <p>
-            이 페이지는 홈의 카테고리 렌즈를 실제 허브 구조로 확장할 자리입니다. MVP에서는 모델/API, 코딩 도구,
-            배포/인프라, 가격/플랜, 자동화/에이전트 5개 축만 우선 구현합니다.
-          </p>
-          <div class="placeholder-links">
-            <a class="button button-primary" href="../index.html">홈으로 돌아가기</a>
-            <a class="button button-secondary" href="https://github.com/xAsh-Ai/AiMediaWebsite/issues/3">Issue #3 보기</a>
+      <main>
+        <section class="archive-hero panel reveal">
+          <div class="archive-hero-copy">
+            <p class="eyebrow">Issue #3</p>
+            <h1>카테고리 허브는 제품 설명이 아니라 판단축부터 보여줘야 한다</h1>
+            <p class="archive-summary">
+              모델/API, 코딩 도구, 배포/인프라, 과금/플랜, 자동화/에이전트 다섯 축으로 브리프를 다시 묶습니다. 각
+              섹션은 현재 seed, 다음 큐, 관련 벤더 desk를 함께 노출합니다.
+            </p>
+            <div class="jump-links">
+              <a class="button button-primary" href="#models">Model / API</a>
+              <a class="button button-secondary" href="#coding-tools">Coding tools</a>
+              <a class="button button-secondary" href="#infra">Deploy / infra</a>
+              <a class="button button-secondary" href="#pricing">Pricing / plan</a>
+              <a class="button button-secondary" href="#agents">Automation / agents</a>
+            </div>
           </div>
+
+          <aside class="archive-hero-side">
+            <p class="eyebrow">How to read</p>
+            <ul class="compact-list">
+              <li>Category는 “어떤 벤더냐”보다 “어떤 판단이 필요한가”로 먼저 나눕니다.</li>
+              <li>각 섹션에는 현재 seed, 관련 tool desk, 다음 큐를 같이 둡니다.</li>
+              <li>아직 volume이 작기 때문에 필터 엔진 대신 명시적 섹션 탐색을 씁니다.</li>
+            </ul>
+          </aside>
         </section>
 
-        <aside class="panel placeholder-card reveal">
-          <h2>Planned category desk</h2>
-          <ul>
-            <li id="models">Model / API changes</li>
-            <li id="coding-tools">Coding tool updates</li>
-            <li id="infra">Deploy / infrastructure changes</li>
-            <li id="pricing">Pricing / plan changes</li>
-            <li id="agents">Automation / agent features</li>
-          </ul>
-        </aside>
+        <section class="archive-section-grid">
+          <article class="archive-section panel reveal" id="models">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Category 01</p>
+                <h2>Model / API changes</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-breaking">Breaking</span>
+                <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              모델 단종, 응답 구조 변경, 권장 엔드포인트 이동, deprecation 공지처럼 코드와 운영 둘 다 흔드는 변경을 모읍니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../briefs/ops-governance-brief.html">Seed 01: OpenAI deprecations 운영형 브리프</a>
+              <a class="archive-link" href="../briefs/eng-runbook-brief.html">Seed 02: OpenAI endpoint / Vercel engineering 브리프</a>
+              <a class="archive-link" href="../tools/index.html#openai">Related desk: OpenAI</a>
+            </div>
+          </article>
+
+          <article class="archive-section panel reveal" id="coding-tools">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Category 02</p>
+                <h2>Coding tool updates</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-security">Security</span>
+                <span class="priority-pill priority-pill-light priority-education">Education</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              Cursor 같은 코딩 도구의 권한, 규칙 파일, 협업 방식, 팀 가이드 영향이 중심입니다. 생산성보다 정책과 협업 비용을 먼저 봅니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../tools/index.html#cursor">Related desk: Cursor</a>
+              <a class="archive-link" href="../briefs/index.html">Current queue: Cursor follow-up seed in briefs hub</a>
+            </div>
+          </article>
+
+          <article class="archive-section panel reveal" id="infra">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Category 03</p>
+                <h2>Deploy / infrastructure changes</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+                <span class="priority-pill priority-pill-light priority-cost">Cost</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              Vercel, runtime, region, quota, rollout, on-call에 바로 연결되는 변경을 다룹니다. seed 02는 이 축에서 OpenAI API 변화와 같이 읽히도록 설계됐습니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../briefs/eng-runbook-brief.html">Seed 02: deployment and fallback sequence</a>
+              <a class="archive-link" href="../tools/index.html#vercel">Related desk: Vercel</a>
+              <a class="archive-link" href="../tools/index.html#supabase">Related desk: Supabase</a>
+            </div>
+          </article>
+
+          <article class="archive-section panel reveal" id="pricing">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Category 04</p>
+                <h2>Pricing / plan changes</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-cost">Cost</span>
+                <span class="priority-pill priority-pill-light priority-nonbreaking">Non-breaking</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              바로 장애를 만들지 않아도 예산과 권한 모델을 바꾸는 공지를 따로 모읍니다. 주간 요약과 툴 desk에서 laterally 연결될 축입니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../tools/index.html#vercel">Vercel pricing and limit desk</a>
+              <a class="archive-link" href="../tools/index.html#openai">OpenAI usage and plan desk</a>
+            </div>
+          </article>
+
+          <article class="archive-section panel reveal" id="agents">
+            <div class="archive-section-head">
+              <div>
+                <p class="eyebrow">Category 05</p>
+                <h2>Automation / agent features</h2>
+              </div>
+              <div class="priority-cluster">
+                <span class="priority-pill priority-pill-light priority-security">Security</span>
+                <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+              </div>
+            </div>
+            <p class="archive-copy">
+              에이전트 권한, approval flow, 로컬 재현성, 운영 안정성과 연결되는 변화를 묶습니다. 현재는 Cursor follow-up seed가 이 축의 첫 후보입니다.
+            </p>
+            <div class="archive-links">
+              <a class="archive-link" href="../tools/index.html#cursor">Related desk: Cursor</a>
+              <a class="archive-link" href="../tools/index.html#anthropic">Related desk: Anthropic</a>
+            </div>
+          </article>
+        </section>
       </main>
     </div>
 
