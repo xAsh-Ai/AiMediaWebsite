@@ -23,10 +23,10 @@
 
 The minimum implementation relationship is:
 
-- one `source_item` can spawn zero or more `content_jobs`
+- one `source_item` can spawn zero or more `content_job` records
 - one `content_job` owns exactly one current `article` draft
-- one `content_job` can accumulate many `review_logs` during preflight or rejection checks
-- one `article` can accumulate many `review_logs` after a draft exists
+- one `content_job` can accumulate many `review_log` records during preflight or rejection checks
+- one `article` can accumulate many `review_log` records after a draft exists
 - one approved `article` can feed many `channel_package` records over time
 
 This allows:
