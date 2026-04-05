@@ -15,6 +15,7 @@
 - Community links can be a discovery signal, but not the final truth.
 - The registry should prefer reusable parser families over vendor-specific fetch code.
 - New vendors should be addable by config when they fit an existing parser family.
+- Some official sources stay in the registry even when they are `manual` intake because the authority exists but is not bot-friendly.
 
 ## Source types
 
@@ -28,7 +29,7 @@
 | `github_issue` | official GitHub issue or discussion used as a rollout notice | yes | `official_github` |
 | `email` | account-scoped vendor email notice | no, manual intake only | `official_account_email` |
 
-`email` is part of the model because the manual workflow already treats official email as a valid authority, but the first registry file only includes pollable web sources.
+`email` is part of the model because the manual workflow already treats official email as a valid authority. The first registry file mainly contains pollable web sources, but it may also include manual-only official pages when the source is important and browser-gated.
 
 ## `sources` config contract
 
@@ -44,18 +45,29 @@ Each source record must carry:
 | `vendor_name` | yes | human-readable vendor label |
 | `name` | yes | source label shown in logs and admin views |
 | `source_type` | yes | one of the source types above |
-| `url` | yes | canonical official URL |
+| `url` | yes | official entry URL used by the registry |
 | `is_official` | yes | final authority flag, must be `true` for the initial inventory |
 | `fetch_cadence` | yes | scheduler hint such as `hourly`, `daily`, or `manual` |
 | `parser_key` | yes | parser family key selected by config |
 | `status` | yes | `active`, `paused`, or `draft` |
 | `notes` | no | editorial or ingestion notes |
 
+## Current parser families
+
+The initial registry uses a small parser family set instead of vendor-specific code:
+
+| `parser_key` | Intended source shape |
+| --- | --- |
+| `html-docs-changelog` | docs-driven changelog pages with repeated dated update blocks |
+| `html-docs-article` | docs pages that behave like a single article or policy page |
+| `help-center-release-notes` | help-center release notes pages with article chrome and chronological sections |
+| `html-site-changelog` | marketing-site changelog pages such as Cursor, Vercel, or Supabase |
+
 ## `source_items` capture and normalize contract
 
 The machine-readable contract lives in [`engine/source-item.schema.json`](../engine/source-item.schema.json).
 
-The raw capture layer keeps the minimal audit fields:
+The raw capture layer keeps the minimal audit fields. A `source_item` can exist immediately after fetch, before normalization is complete.
 
 | Field | Meaning |
 | --- | --- |
@@ -65,12 +77,12 @@ The raw capture layer keeps the minimal audit fields:
 | `vendor_code` | normalized vendor label |
 | `title` | raw source title |
 | `url` | raw item URL |
-| `published_at` | item publish timestamp |
-| `raw_text` | extracted text body before interpretation |
+| `published_at` | item publish timestamp when the source exposes one |
+| `raw_text` | extracted text body before interpretation when capture succeeds |
 | `raw_fetched_at` | when the engine captured the item |
 | `fetch_status` | `ok`, `partial`, `error`, or `skipped` |
 
-The normalized object is the downstream contract used by briefing logic:
+The normalized object is the downstream contract used by briefing logic. It is optional at capture time and appears only after the normalize step completes.
 
 | Field | Meaning |
 | --- | --- |
@@ -99,7 +111,7 @@ The initial registry covers the first tracked vendor set from the product brief:
 
 | Vendor | Included sources | Why they are in v0 |
 | --- | --- | --- |
-| OpenAI | API changelog, API deprecations, ChatGPT release notes | highest editorial priority and already used in seed briefs |
+| OpenAI | API changelog, API deprecations, ChatGPT release notes | highest editorial priority and already used in seed briefs; ChatGPT release notes stay manual until access constraints are solved |
 | Anthropic | release notes overview, Claude Help Center release notes, model deprecations | strong comparator vendor for API and workspace changes |
 | Cursor | changelog | primary coding-tool desk and interview-backed follow-up seed |
 | Vercel | changelog | deploy, runtime, and pricing changes often overlap with API work |
@@ -119,7 +131,7 @@ Code owns:
 
 - HTTP fetching and retry logic
 - parser implementations keyed by `parser_key`
-- text extraction, checksuming, and dedupe
+- text extraction, checksumming, and dedupe
 - normalized item validation against schema
 - storage adapters, review pipeline, and publishing pipeline
 

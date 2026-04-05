@@ -8,13 +8,8 @@
     "id",
     "source_id",
     "vendor_code",
-    "title",
-    "url",
-    "published_at",
-    "raw_text",
     "raw_fetched_at",
-    "fetch_status",
-    "normalized"
+    "fetch_status"
   ],
   "properties": {
     "id": {
@@ -41,11 +36,11 @@
       "format": "uri"
     },
     "published_at": {
-      "type": "string",
+      "type": ["string", "null"],
       "format": "date-time"
     },
     "raw_text": {
-      "type": "string",
+      "type": ["string", "null"],
       "minLength": 1
     },
     "raw_fetched_at": {
@@ -57,6 +52,7 @@
       "enum": ["ok", "partial", "error", "skipped"]
     },
     "normalized": {
+      "description": "Optional normalize-layer payload. This is absent until normalization succeeds.",
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -177,5 +173,33 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "fetch_status": {
+            "enum": ["ok", "partial"]
+          }
+        },
+        "required": ["fetch_status"]
+      },
+      "then": {
+        "required": ["title", "url"]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "fetch_status": {
+            "const": "ok"
+          }
+        },
+        "required": ["fetch_status"]
+      },
+      "then": {
+        "required": ["raw_text"]
+      }
+    }
+  ]
 }
