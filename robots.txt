@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aimedia-deploy.vercel.app/sitemap.xml

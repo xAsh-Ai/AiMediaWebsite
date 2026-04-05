@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">AiMediaWebsite brief social card</title>
+  <desc id="desc">Dual-track brief system for operations and engineering teams.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09131b" />
+      <stop offset="50%" stop-color="#16344a" />
+      <stop offset="100%" stop-color="#0d6b78" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="74" y="76" width="1052" height="478" rx="30" fill="#071f32" fill-opacity="0.45" stroke="#ffffff" stroke-opacity="0.11" />
+
+  <text x="108" y="154" fill="#f0b35b" font-family="Georgia, 'Times New Roman', serif" font-size="30" letter-spacing="5">DUAL-TRACK BRIEF</text>
+  <text x="108" y="242" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="66" font-weight="700">
+    Ops and engineering
+  </text>
+  <text x="108" y="316" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="66" font-weight="700">
+    read the same update differently
+  </text>
+  <text x="108" y="388" fill="#d5e8f6" font-family="'Trebuchet MS', Arial, sans-serif" font-size="32">
+    Evidence, source links, team impact, and share-ready output blocks in one brief.
+  </text>
+
+  <g transform="translate(108 454)">
+    <rect width="260" height="68" rx="18" fill="#f0b35b" fill-opacity="0.16" />
+    <text x="28" y="43" fill="#ffffff" font-family="'Trebuchet MS', Arial, sans-serif" font-size="30">Operations track</text>
+  </g>
+  <g transform="translate(392 454)">
+    <rect width="286" height="68" rx="18" fill="#ffffff" fill-opacity="0.1" />
+    <text x="28" y="43" fill="#f4eee2" font-family="'Trebuchet MS', Arial, sans-serif" font-size="30">Engineering track</text>
+  </g>
+  <g transform="translate(702 454)">
+    <rect width="390" height="68" rx="18" fill="#ffffff" fill-opacity="0.08" />
+    <text x="28" y="43" fill="#d5e8f6" font-family="'Trebuchet MS', Arial, sans-serif" font-size="30">Slack / checklist / runbook</text>
+  </g>
+</svg>

@@ -55,10 +55,11 @@ vercel dev --listen 127.0.0.1:4173
 
 | 문서 | 경로 | 역할 |
 | --- | --- | --- |
-| 제품 기획 | `/Users/mac/project/AiMediaWebsite/AiMediaWebsite.md` | 제품 정의, IA, 운영 엔진과 백오피스의 장기 방향을 정리한 기획서 |
-| 수동 발행 절차 | `/Users/mac/project/AiMediaWebsite/docs/manual-publishing-workflow.md` | 인터뷰로 검증된 수동 브리프를 먼저 발행해 MVP를 검증하고, 자동 수집·자동 발행 엔진은 아직 만들지 않는 절차 |
-| ICP·인터뷰 스크립트 | `/Users/mac/project/AiMediaWebsite/docs/icp-outreach-scripts.md` | 초기 ICP 검증과 인터뷰 진행에 쓰는 스크립트와 응답 인사이트 |
-| 설계(office-hours) | `/Users/mac/.gstack/projects/aimediawebsite/mac-unknown-design-20260405-112043.md` | 구조와 방향성을 보완하는 설계 메모 |
+| 제품 기획 | `./AiMediaWebsite.md` | 제품 정의, IA, 운영 엔진과 백오피스의 장기 방향을 정리한 기획서 |
+| 수동 발행 절차 | `./docs/manual-publishing-workflow.md` | 인터뷰로 검증된 수동 브리프를 먼저 발행해 MVP를 검증하고, 자동 수집·자동 발행 엔진은 아직 만들지 않는 절차 |
+| 퍼블릭 웹 기본값 | `./docs/public-web-basics.md` | canonical, robots, sitemap, favicon, social metadata 같은 public-web 기본 정책 |
+| ICP·인터뷰 스크립트 | `./docs/icp-outreach-scripts.md` | 초기 ICP 검증과 인터뷰 진행에 쓰는 스크립트와 응답 인사이트 |
+| 설계(office-hours) | `external local note` | 구조와 방향성을 보완하는 설계 메모. 현재 레포 바깥 로컬 초안이라 저장소에서는 직접 열리지 않는다. |
 
 ## MVP Stage
 
