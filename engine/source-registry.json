@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "domains": [
+    {
+      "id": "ai-saas",
+      "code": "ai-saas",
+      "name": "AI and SaaS updates",
+      "status": "active"
+    }
+  ],
+  "sources": [
+    {
+      "id": "openai-api-changelog",
+      "domain_id": "ai-saas",
+      "vendor_code": "openai",
+      "vendor_name": "OpenAI",
+      "name": "OpenAI API changelog",
+      "source_type": "changelog",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "is_official": true,
+      "fetch_cadence": "hourly",
+      "parser_key": "html-docs-changelog",
+      "status": "active",
+      "notes": "Primary API change log for models, endpoints, billing, and migration-impact items."
+    },
+    {
+      "id": "openai-api-deprecations",
+      "domain_id": "ai-saas",
+      "vendor_code": "openai",
+      "vendor_name": "OpenAI",
+      "name": "OpenAI API deprecations",
+      "source_type": "deprecations",
+      "url": "https://developers.openai.com/api/docs/deprecations",
+      "is_official": true,
+      "fetch_cadence": "daily",
+      "parser_key": "html-docs-article",
+      "status": "active",
+      "notes": "Lifecycle and retirement notices with replacement guidance."
+    },
+    {
+      "id": "openai-chatgpt-release-notes",
+      "domain_id": "ai-saas",
+      "vendor_code": "openai",
+      "vendor_name": "OpenAI",
+      "name": "ChatGPT release notes",
+      "source_type": "release_notes",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "is_official": true,
+      "fetch_cadence": "daily",
+      "parser_key": "help-center-release-notes",
+      "status": "active",
+      "notes": "Workspace and app-facing changes that may matter to operations teams."
+    },
+    {
+      "id": "anthropic-release-notes-overview",
+      "domain_id": "ai-saas",
+      "vendor_code": "anthropic",
+      "vendor_name": "Anthropic",
+      "name": "Anthropic release notes overview",
+      "source_type": "release_notes",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "is_official": true,
+      "fetch_cadence": "daily",
+      "parser_key": "html-docs-article",
+      "status": "active",
+      "notes": "Landing page for Anthropic API and app updates."
+    },
+    {
+      "id": "anthropic-help-center-release-notes",
+      "domain_id": "ai-saas",
+      "vendor_code": "anthropic",
+      "vendor_name": "Anthropic",
+      "name": "Claude Help Center release notes",
+      "source_type": "release_notes",
+      "url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "is_official": true,
+      "fetch_cadence": "daily",
+      "parser_key": "help-center-release-notes",
+      "status": "active",
+      "notes": "Workspace and Claude app release notes for end-user and admin-facing changes."
+    },
+    {
+      "id": "anthropic-model-deprecations",
+      "domain_id": "ai-saas",
+      "vendor_code": "anthropic",
+      "vendor_name": "Anthropic",
+      "name": "Anthropic model deprecations",
+      "source_type": "deprecations",
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "is_official": true,
+      "fetch_cadence": "daily",
+      "parser_key": "html-docs-article",
+      "status": "active",
+      "notes": "Retirement schedule and replacement guidance for Claude model families."
+    },
+    {
+      "id": "cursor-changelog",
+      "domain_id": "ai-saas",
+      "vendor_code": "cursor",
+      "vendor_name": "Cursor",
+      "name": "Cursor changelog",
+      "source_type": "changelog",
+      "url": "https://cursor.com/changelog",
+      "is_official": true,
+      "fetch_cadence": "daily",
+      "parser_key": "html-site-changelog",
+      "status": "active",
+      "notes": "Primary source for IDE, agent, plugin, and workflow changes."
+    },
+    {
+      "id": "vercel-changelog",
+      "domain_id": "ai-saas",
+      "vendor_code": "vercel",
+      "vendor_name": "Vercel",
+      "name": "Vercel changelog",
+      "source_type": "changelog",
+      "url": "https://vercel.com/changelog",
+      "is_official": true,
+      "fetch_cadence": "daily",
+      "parser_key": "html-site-changelog",
+      "status": "active",
+      "notes": "Runtime, deploy, pricing, and platform changes that overlap with engineering operations."
+    },
+    {
+      "id": "supabase-changelog",
+      "domain_id": "ai-saas",
+      "vendor_code": "supabase",
+      "vendor_name": "Supabase",
+      "name": "Supabase changelog",
+      "source_type": "changelog",
+      "url": "https://supabase.com/changelog",
+      "is_official": true,
+      "fetch_cadence": "daily",
+      "parser_key": "html-site-changelog",
+      "status": "active",
+      "notes": "Database, auth, edge, billing, and security-impact product updates."
+    }
+  ]
+}

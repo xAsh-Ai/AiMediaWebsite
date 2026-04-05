@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aimedia.engine/source-registry.schema.json",
+  "title": "AiMedia source registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "domains", "sources"],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "code", "name", "status"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "code": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "paused", "draft"]
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "domain_id",
+          "vendor_code",
+          "vendor_name",
+          "name",
+          "source_type",
+          "url",
+          "is_official",
+          "fetch_cadence",
+          "parser_key",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "domain_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "vendor_code": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "vendor_name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "changelog",
+              "release_notes",
+              "deprecations",
+              "docs",
+              "github_release",
+              "github_issue",
+              "email"
+            ]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "is_official": {
+            "type": "boolean"
+          },
+          "fetch_cadence": {
+            "type": "string",
+            "enum": ["hourly", "daily", "manual"]
+          },
+          "parser_key": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "paused", "draft"]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
