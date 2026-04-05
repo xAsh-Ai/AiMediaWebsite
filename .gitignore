@@ -12,6 +12,8 @@ out/
 dist/
 .turbo/
 .vercel/
+__pycache__/
+*.pyc
 *.tsbuildinfo
 
 # OS / editor

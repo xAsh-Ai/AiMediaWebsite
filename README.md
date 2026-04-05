@@ -66,6 +66,22 @@ vercel dev --listen 127.0.0.1:4173
 | ICP·인터뷰 스크립트 | `./docs/icp-outreach-scripts.md` | 초기 ICP 검증과 인터뷰 진행에 쓰는 스크립트와 응답 인사이트 |
 | 설계(office-hours) | `external local note` | 구조와 방향성을 보완하는 설계 메모. 현재 레포 바깥 로컬 초안이라 저장소에서는 직접 열리지 않는다. |
 
+## Engine Runtime
+
+엔진 v1 코어는 `engine_runtime/` 패키지에서 제공한다. 현재 구현 범위는 `공식 소스 registry 로드 -> HTML 파싱 -> source_item normalize -> draft/review/workflow 생성 -> publish package 초안 생성` 까지다.
+
+지원 CLI:
+- `python3 -m engine_runtime list-sources`
+- `python3 -m engine_runtime run-html --source-id openai-api-deprecations --html-file tests/fixtures/openai_deprecation.html --output-dir /tmp/aimedia-engine-run`
+
+출력 아티팩트:
+- `pipeline-output.json`: source, source_items, content_job, article, review_logs, channel_packages를 한 번에 담은 실행 결과
+
+제약:
+- fetcher는 아직 붙지 않았고, 현재는 로컬 HTML 입력을 기준으로 동작한다.
+- parser는 registry에 선언된 `html-docs-article`, `html-docs-changelog`, `html-site-changelog`, `help-center-release-notes`만 지원한다.
+- review rule은 `engine/review-rules.json`의 최소 계약만 구현한 상태다.
+
 ## MVP Stage
 
 장기적으로 이 프로젝트는 소스 수집, 정규화, 검수, 발행을 아우르는 운영 엔진과 백오피스를 핵심 자산으로 두는 구조를 목표로 한다. 하지만 현재 단계에서는 그 엔진을 바로 구현하지 않고, 인터뷰로 검증한 수동 브리프 워크플로우와 정적 HTML 셸로 문제-해결 적합성을 먼저 확인하고 있다. 즉 지금의 사이트는 완성형 제품이라기보다, 장기적인 운영 플랫폼 가설을 빠르게 검증하기 위한 MVP 표면이다.
