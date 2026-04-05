@@ -121,69 +121,71 @@
         <section class="section-header reveal">
           <div>
             <p class="eyebrow">Latest briefs</p>
-            <h2>첫 화면에서 바로 읽히는 변화 3건</h2>
+            <h2>지금 검증 중인 seed brief 2건과 다음 큐 1건</h2>
           </div>
           <p>
-            실제 데이터 수집 전 단계라 예시 카드로 구조만 고정합니다. 각 카드에는 바뀐 점, 영향받는 팀, 바로 할 일이
-            반드시 같이 들어갑니다.
+            수동 발행으로 먼저 검증하는 seed를 홈에 직접 올립니다. 각 카드에는 공식 근거, 영향 팀, 이번 주 할 일,
+            선호 공유 형식이 같이 남아야 합니다.
           </p>
         </section>
 
         <section class="brief-grid">
           <article class="brief-card panel reveal">
             <div class="card-meta">
-              <span class="tag tag-sample">Sample brief</span>
-              <span>OpenAI desk</span>
+              <span class="tag tag-seed">Seed 01</span>
+              <span>OpenAI deprecations</span>
             </div>
             <div class="brief-card-flags">
-              <span class="brief-track-badge brief-track-eng">Engineering track</span>
+              <span class="brief-track-badge brief-track-ops">Operations track</span>
+              <span class="priority-pill priority-pill-light priority-security">Security</span>
+              <span class="priority-pill priority-pill-light priority-education">Education</span>
               <span class="priority-pill priority-pill-light priority-breaking">Breaking</span>
-              <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
             </div>
-            <h3>API 응답 형식 변경이 있으면 어느 팀이 먼저 점검해야 하나</h3>
-            <p class="card-kicker">Backend owners / agent builders / QA</p>
+            <h3><a href="./briefs/ops-governance-brief.html">모델 단종 공지는 기술 변경보다 먼저 팀별 공지 순서를 정해야 한다</a></h3>
+            <p class="card-kicker">First seen via official email + docs</p>
             <ul class="signal-list">
-              <li><strong>What changed</strong><span>응답 구조 변경 가능성을 빠르게 표시</span></li>
-              <li><strong>Why it matters</strong><span>파서, 로그 저장, 알림 흐름이 같이 흔들림</span></li>
-              <li><strong>What to do</strong><span>SDK 버전, JSON schema, 실패 fallback을 먼저 확인</span></li>
+              <li><strong>Who confirms</strong><span>AI governance / security lead</span></li>
+              <li><strong>What to do this week</strong><span>영향 팀 식별, 위키 갱신, 교육 자료 반영</span></li>
+              <li><strong>Preferred share</strong><span>Leader 5-line / Wiki summary / Checklist</span></li>
             </ul>
           </article>
 
           <article class="brief-card panel reveal">
             <div class="card-meta">
-              <span class="tag tag-sample">Sample brief</span>
+              <span class="tag tag-seed">Seed 02</span>
+              <span>OpenAI + Vercel changelog</span>
+            </div>
+            <div class="brief-card-flags">
+              <span class="brief-track-badge brief-track-eng">Engineering track</span>
+              <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
+              <span class="priority-pill priority-pill-light priority-cost">Cost</span>
+              <span class="priority-pill priority-pill-light priority-nonbreaking">Non-breaking</span>
+            </div>
+            <h3><a href="./briefs/eng-runbook-brief.html">권장 엔드포인트 변경 소식은 fallback과 배포 순서를 먼저 적어야 한다</a></h3>
+            <p class="card-kicker">First seen via X, then official changelog</p>
+            <ul class="signal-list">
+              <li><strong>Who confirms</strong><span>backend owner + platform engineer</span></li>
+              <li><strong>What to do this week</strong><span>staging smoke, fallback memo, env diff check</span></li>
+              <li><strong>Preferred share</strong><span>Slack-ready note / Runbook memo / Checklist</span></li>
+            </ul>
+          </article>
+
+          <article class="brief-card panel reveal">
+            <div class="card-meta">
+              <span class="tag tag-queue">Queue next</span>
               <span>Cursor desk</span>
             </div>
             <div class="brief-card-flags">
               <span class="brief-track-badge brief-track-shared">Ops + Eng</span>
               <span class="priority-pill priority-pill-light priority-security">Security</span>
-              <span class="priority-pill priority-pill-light priority-education">Education</span>
-            </div>
-            <h3>코딩 도구 업데이트를 팀 정책 관점으로 재해석하는 카드</h3>
-            <p class="card-kicker">Engineering leads / enablement</p>
-            <ul class="signal-list">
-              <li><strong>What changed</strong><span>에이전트 기능이나 권한 범위를 한 줄로 요약</span></li>
-              <li><strong>Why it matters</strong><span>코드 리뷰 규칙, 보안 가드레일과 충돌 가능성 표시</span></li>
-              <li><strong>What to do</strong><span>샌드박스 정책과 팀 가이드 문서를 함께 갱신</span></li>
-            </ul>
-          </article>
-
-          <article class="brief-card panel reveal">
-            <div class="card-meta">
-              <span class="tag tag-sample">Sample brief</span>
-              <span>Vercel desk</span>
-            </div>
-            <div class="brief-card-flags">
-              <span class="brief-track-badge brief-track-eng">Engineering track</span>
-              <span class="priority-pill priority-pill-light priority-cost">Cost</span>
               <span class="priority-pill priority-pill-light priority-deployment">Deployment</span>
             </div>
-            <h3>배포·인프라 변화는 운영 체크리스트로 끝나야 한다</h3>
-            <p class="card-kicker">Platform / DevOps / growth engineers</p>
+            <h3>Cursor 업데이트 이후 규칙 파일, 버전 고정, 팀 공지를 같이 다루는 후속 seed</h3>
+            <p class="card-kicker">Next candidate from interview response B</p>
             <ul class="signal-list">
-              <li><strong>What changed</strong><span>가격, 한도, 빌드 플로우의 핵심 차이만 노출</span></li>
-              <li><strong>Why it matters</strong><span>배포 실패와 비용 급증 위험을 앞단에서 차단</span></li>
-              <li><strong>What to do</strong><span>quota, fallback region, billing alert를 바로 검토</span></li>
+              <li><strong>Official source</strong><span>Cursor changelog + release note confirmation</span></li>
+              <li><strong>Action types</strong><span>rules file sync, extension version align, team Slack note</span></li>
+              <li><strong>Why queued</strong><span>track-shared output과 tool archive 연결성을 같이 검증하기 위해</span></li>
             </ul>
           </article>
         </section>

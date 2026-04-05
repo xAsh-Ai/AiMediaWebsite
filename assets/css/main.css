@@ -473,6 +473,16 @@ main {
   color: #a8422a;
 }
 
+.tag-seed {
+  background: rgba(121, 210, 166, 0.18);
+  color: #205f4a;
+}
+
+.tag-queue {
+  background: rgba(16, 50, 74, 0.08);
+  color: var(--text);
+}
+
 .brief-card-flags {
   display: flex;
   flex-wrap: wrap;
