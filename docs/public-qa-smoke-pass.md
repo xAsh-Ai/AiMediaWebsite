@@ -7,7 +7,7 @@
 Vercel 라우팅과 동일한 기준으로 아래 명령으로 로컬 preview를 띄운다.
 
 ```bash
-cd /Users/mac/project/AiMediaWebsite
+cd <repository-root>
 vercel dev --listen 127.0.0.1:4173
 ```
 

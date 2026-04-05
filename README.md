@@ -9,7 +9,7 @@ GitHub: https://github.com/xAsh-Ai/AiMediaWebsite
 저장소 루트에서 아래 명령으로 정적 사이트를 미리 볼 수 있다.
 
 ```bash
-cd /Users/mac/project/AiMediaWebsite
+cd <repository-root>
 python3 -m http.server 8000
 ```
 
@@ -20,13 +20,13 @@ python3 -m http.server 8000
 현재 퍼블릭 MVP는 정적 HTML 사이트로 운영되므로, preview 배포는 Vercel 기준으로 가장 단순하게 처리한다.
 
 ```bash
-cd /Users/mac/project/AiMediaWebsite
+cd <repository-root>
 vercel deploy -y
 ```
 
 배포 전제:
 - `vercel whoami` 가 성공해야 한다.
-- 배포 설정은 루트의 [`vercel.json`](/tmp/aimedia-deploy/vercel.json) 을 기준으로 한다.
+- 배포 설정은 루트의 [`vercel.json`](./vercel.json) 을 기준으로 한다.
 - preview 배포를 기본값으로 두고, production 배포는 별도 판단 후 진행한다.
 
 ## Public QA Smoke Pass
@@ -34,7 +34,7 @@ vercel deploy -y
 퍼블릭 QA는 preview URL을 직접 두드리는 방식보다, 로컬에서 Vercel 라우팅을 재현한 뒤 핵심 경로를 점검하는 흐름을 기본으로 둔다.
 
 ```bash
-cd /Users/mac/project/AiMediaWebsite
+cd <repository-root>
 vercel dev --listen 127.0.0.1:4173
 ```
 
@@ -49,7 +49,7 @@ vercel dev --listen 127.0.0.1:4173
 - `/about`
 - `/contact`
 
-세부 체크리스트는 [`docs/public-qa-smoke-pass.md`](/tmp/aimedia-deploy/docs/public-qa-smoke-pass.md) 를 따른다.
+세부 체크리스트는 [`docs/public-qa-smoke-pass.md`](./docs/public-qa-smoke-pass.md) 를 따른다.
 
 ## Documents
 
